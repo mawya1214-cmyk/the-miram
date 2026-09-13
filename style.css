@@ -672,11 +672,15 @@ nav a.active::after {
 .section {
     position: relative;
 
-    padding: 120px 0;
+    padding: 120px 5%;
 
     width: 100%;
 
+    max-width: 100%;
+
     overflow: hidden;
+
+    box-sizing: border-box;
 }
 
 .container {
@@ -2255,7 +2259,7 @@ html[dir="rtl"] .fact small {
 
     .section {
         padding:
-            85px 0;
+            85px 6%;
     }
 
     .container {
