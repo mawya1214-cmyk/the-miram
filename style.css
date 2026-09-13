@@ -3105,3 +3105,273 @@ html[dir="rtl"] .actions {
     }
 
 }
+
+
+/* =========================================================
+   CREDITS (actual markup uses .credit-row, not .credit-item)
+   ========================================================= */
+
+.credit-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    align-items: baseline;
+
+    gap: 8px 20px;
+
+    padding: 16px 0;
+
+    border-bottom:
+        1px solid
+        rgba(244,233,208,0.1);
+
+    min-width: 0;
+}
+
+.credit-row span {
+    color: var(--sand);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.14em;
+
+    min-width: 0;
+
+    overflow-wrap: break-word;
+}
+
+.credit-row strong {
+    color: var(--ivory);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.05em;
+
+    min-width: 0;
+
+    overflow-wrap: break-word;
+
+    text-align: right;
+}
+
+html[dir="rtl"] .credit-row strong {
+    text-align: left;
+}
+
+
+/* =========================================================
+   PRESS (actual markup uses .press-content, not .press-box)
+   ========================================================= */
+
+.press-content {
+    max-width: 780px;
+
+    min-width: 0;
+}
+
+.press-content h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(1.8rem, 4vw, 3rem);
+
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    margin: 15px 0 22px;
+
+    overflow-wrap: break-word;
+}
+
+.press-content p {
+    color: var(--muted);
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CONTACT (actual markup uses .contact-grid / .contact-main
+   / .contact-label / .contact-links)
+   ========================================================= */
+
+.contact-grid {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    min-width: 0;
+}
+
+.contact-main {
+    min-width: 0;
+
+    max-width: 500px;
+}
+
+.contact-label {
+    color: var(--gold);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 12px;
+
+    overflow-wrap: break-word;
+}
+
+.contact-main h3 {
+    font-family: Georgia, serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+
+    overflow-wrap: break-word;
+}
+
+.contact-main p {
+    color: var(--muted);
+
+    overflow-wrap: break-word;
+}
+
+.contact-links {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    min-width: 0;
+}
+
+.contact-links a {
+    color: var(--ivory);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0.03em;
+
+    padding-bottom: 6px;
+
+    border-bottom:
+        1px solid
+        rgba(244,233,208,0.15);
+
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+
+    transition: var(--transition);
+}
+
+.contact-links a:hover {
+    color: var(--gold);
+
+    border-color: var(--gold);
+}
+
+html[dir="rtl"] .contact-links {
+    align-items: flex-end;
+}
+
+
+/* =========================================================
+   FOOTER (actual markup: .site-footer > .footer-brand, p,
+   .footer-line, .footer-bottom)
+   ========================================================= */
+
+.site-footer {
+    text-align: center;
+}
+
+.site-footer .footer-brand {
+    font-family: Georgia, serif;
+
+    font-size: 1.3rem;
+
+    letter-spacing: 0.12em;
+
+    justify-content: center;
+}
+
+.site-footer > p {
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.15em;
+
+    margin-top: 12px;
+
+    overflow-wrap: break-word;
+}
+
+.footer-line {
+    width: 60px;
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 25px auto;
+}
+
+.site-footer .footer-bottom {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 8px 20px;
+
+    color:
+        rgba(174,184,197,0.6);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.1em;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   MOBILE: CREDITS / PRESS / CONTACT / FOOTER
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .contact-grid {
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+    .contact-main {
+        max-width: 100%;
+    }
+
+    .credit-row {
+        padding: 14px 0;
+    }
+}
