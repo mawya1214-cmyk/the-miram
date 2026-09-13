@@ -1,17 +1,23 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================
        LOADER
     ========================= */
 
-    const loader = document.getElementById("loader");
+    const loader =
+        document.getElementById("loader");
 
     window.addEventListener("load", () => {
 
-        setTimeout(() => {
-            loader.classList.add("loaded");
-        }, 700);
+        if (loader) {
+
+            setTimeout(() => {
+
+                loader.classList.add("loaded");
+
+            }, 700);
+
+        }
 
     });
 
@@ -20,50 +26,106 @@ document.addEventListener("DOMContentLoaded", () => {
        LANGUAGE
     ========================= */
 
-    const langBtn = document.getElementById("langBtn");
+    const langBtn =
+        document.getElementById("langBtn");
 
-    let currentLanguage = localStorage.getItem("miramLanguage") || "en";
+    let currentLanguage =
+        localStorage.getItem("miramLanguage") || "en";
+
 
     function updateLanguage() {
 
-        document.documentElement.lang = currentLanguage;
-        document.documentElement.dir =
-            currentLanguage === "ar" ? "rtl" : "ltr";
+        const html =
+            document.documentElement;
 
-        document.querySelectorAll("[data-en]").forEach(element => {
+        /* RTL / LTR */
 
-            const text =
-                currentLanguage === "ar"
-                    ? element.dataset.ar
-                    : element.dataset.en;
+        html.lang =
+            currentLanguage;
 
-            if (text) {
-                element.textContent = text;
-            }
-
-        });
-
-        langBtn.textContent =
+        html.dir =
             currentLanguage === "ar"
-                ? "English"
-                : "العربية";
+                ? "rtl"
+                : "ltr";
+
+
+        /* Change text */
+
+        document
+            .querySelectorAll("[data-en]")
+            .forEach(element => {
+
+                const text =
+                    currentLanguage === "ar"
+                        ? element.dataset.ar
+                        : element.dataset.en;
+
+                if (
+                    typeof text === "string" &&
+                    text.length > 0
+                ) {
+
+                    element.textContent =
+                        text;
+
+                }
+
+            });
+
+
+        /* Language button */
+
+        if (langBtn) {
+
+            langBtn.textContent =
+                currentLanguage === "ar"
+                    ? "English"
+                    : "العربية";
+
+            langBtn.setAttribute(
+                "aria-label",
+                currentLanguage === "ar"
+                    ? "Switch to English"
+                    : "التبديل إلى العربية"
+            );
+
+        }
+
+
+        /* Save */
 
         localStorage.setItem(
             "miramLanguage",
             currentLanguage
         );
+
+
+        /* Update document direction */
+
+        document.body.style.direction =
+            currentLanguage === "ar"
+                ? "rtl"
+                : "ltr";
     }
 
-    langBtn.addEventListener("click", () => {
 
-        currentLanguage =
-            currentLanguage === "en"
-                ? "ar"
-                : "en";
+    if (langBtn) {
 
-        updateLanguage();
+        langBtn.addEventListener(
+            "click",
+            () => {
 
-    });
+                currentLanguage =
+                    currentLanguage === "en"
+                        ? "ar"
+                        : "en";
+
+                updateLanguage();
+
+            }
+        );
+
+    }
 
     updateLanguage();
 
@@ -72,48 +134,100 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE MENU
     ========================= */
 
-    const menuBtn = document.getElementById("menuBtn");
-    const nav = document.getElementById("nav");
+    const menuBtn =
+        document.getElementById("menuBtn");
 
-    menuBtn.addEventListener("click", () => {
-
-        nav.classList.toggle("open");
-
-        menuBtn.textContent =
-            nav.classList.contains("open")
-                ? "×"
-                : "☰";
-
-    });
+    const nav =
+        document.getElementById("nav");
 
 
-    document.querySelectorAll("nav a").forEach(link => {
+    if (menuBtn && nav) {
 
-        link.addEventListener("click", () => {
+        menuBtn.addEventListener(
+            "click",
+            () => {
 
-            nav.classList.remove("open");
-            menuBtn.textContent = "☰";
+                const isOpen =
+                    nav.classList.toggle("open");
 
-        });
+                menuBtn.textContent =
+                    isOpen
+                        ? "×"
+                        : "☰";
 
-    });
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                        ? "true"
+                        : "false"
+                );
+
+            }
+        );
+
+
+        document
+            .querySelectorAll("nav a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        nav.classList.remove(
+                            "open"
+                        );
+
+                        menuBtn.textContent =
+                            "☰";
+
+                        menuBtn.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
 
 
     /* =========================
        HEADER SCROLL
     ========================= */
 
-    const header = document.getElementById("header");
+    const header =
+        document.getElementById("header");
 
-    window.addEventListener("scroll", () => {
+    function updateHeader() {
+
+        if (!header) return;
 
         if (window.scrollY > 60) {
-            header.classList.add("scrolled");
+
+            header.classList.add(
+                "scrolled"
+            );
+
         } else {
-            header.classList.remove("scrolled");
+
+            header.classList.remove(
+                "scrolled"
+            );
+
         }
 
-    });
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+    updateHeader();
 
 
     /* =========================
@@ -121,19 +235,29 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const progress =
-        document.getElementById("scrollProgress");
+        document.getElementById(
+            "scrollProgress"
+        );
+
 
     function updateProgress() {
 
-        const scrollTop = window.scrollY;
+        if (!progress) return;
+
+        const scrollTop =
+            window.scrollY;
 
         const documentHeight =
-            document.documentElement.scrollHeight -
+            document.documentElement
+                .scrollHeight -
             window.innerHeight;
 
         const percentage =
             documentHeight > 0
-                ? (scrollTop / documentHeight) * 100
+                ? (
+                    scrollTop /
+                    documentHeight
+                ) * 100
                 : 0;
 
         progress.style.width =
@@ -141,11 +265,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     window.addEventListener(
         "scroll",
         updateProgress,
         { passive: true }
     );
+
+    updateProgress();
 
 
     /* =========================
@@ -153,35 +280,73 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const revealElements =
-        document.querySelectorAll(".reveal");
+        document.querySelectorAll(
+            ".reveal"
+        );
 
-    const observer =
-        new IntersectionObserver(
-            entries => {
 
-                entries.forEach(entry => {
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
 
-                    if (entry.isIntersecting) {
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
-                        entry.target.classList.add("visible");
+                    entries.forEach(
+                        entry => {
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                    }
+                                entry.target
+                                    .classList
+                                    .add(
+                                        "visible"
+                                    );
 
-                });
+                                observer
+                                    .unobserve(
+                                        entry.target
+                                    );
 
-            },
-            {
-                threshold: 0.12
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            element => {
+
+                observer.observe(
+                    element
+                );
+
             }
         );
 
-    revealElements.forEach(element => {
-        observer.observe(element);
-    });
+    } else {
+
+        revealElements.forEach(
+            element => {
+
+                element.classList.add(
+                    "visible"
+                );
+
+            }
+        );
+
+    }
 
 
     /* =========================
@@ -189,45 +354,89 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const sections =
-        document.querySelectorAll("section[id]");
+        document.querySelectorAll(
+            "section[id]"
+        );
 
     const navLinks =
-        document.querySelectorAll("nav a");
+        document.querySelectorAll(
+            "nav a"
+        );
 
-    const sectionObserver =
-        new IntersectionObserver(
-            entries => {
 
-                entries.forEach(entry => {
+    if (
+        sections.length &&
+        navLinks.length &&
+        "IntersectionObserver"
+        in window
+    ) {
 
-                    if (entry.isIntersecting) {
+        const sectionObserver =
+            new IntersectionObserver(
+                entries => {
 
-                        navLinks.forEach(link => {
-                            link.classList.remove("active");
-                        });
+                    entries.forEach(
+                        entry => {
 
-                        const activeLink =
-                            document.querySelector(
-                                `nav a[href="#${entry.target.id}"]`
-                            );
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                        if (activeLink) {
-                            activeLink.classList.add("active");
+                                navLinks.forEach(
+                                    link => {
+
+                                        link.classList
+                                            .remove(
+                                                "active"
+                                            );
+
+                                    }
+                                );
+
+
+                                const activeLink =
+                                    document
+                                        .querySelector(
+                                            `nav a[href="#${entry.target.id}"]`
+                                        );
+
+
+                                if (
+                                    activeLink
+                                ) {
+
+                                    activeLink
+                                        .classList
+                                        .add(
+                                            "active"
+                                        );
+
+                                }
+
+                            }
+
                         }
+                    );
 
-                    }
+                },
+                {
+                    rootMargin:
+                        "-30% 0px -60% 0px"
+                }
+            );
 
-                });
 
-            },
-            {
-                rootMargin: "-30% 0px -60% 0px"
+        sections.forEach(
+            section => {
+
+                sectionObserver.observe(
+                    section
+                );
+
             }
         );
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
+    }
 
 
     /* =========================
@@ -235,70 +444,155 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const lightbox =
-        document.getElementById("lightbox");
+        document.getElementById(
+            "lightbox"
+        );
 
     const lightboxImage =
-        document.getElementById("lightboxImage");
+        document.getElementById(
+            "lightboxImage"
+        );
 
     const lightboxClose =
-        document.getElementById("lightboxClose");
-
-    document.querySelectorAll("[data-lightbox]")
-        .forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                const image =
-                    button.dataset.lightbox;
-
-                lightboxImage.src = image;
-
-                lightbox.classList.add("active");
-
-                document.body.style.overflow =
-                    "hidden";
-
-            });
-
-        });
+        document.getElementById(
+            "lightboxClose"
+        );
 
 
     function closeLightbox() {
 
-        lightbox.classList.remove("active");
+        if (!lightbox) return;
 
-        document.body.style.overflow = "";
+        lightbox.classList.remove(
+            "active"
+        );
+
+        document.body.style.overflow =
+            "";
+
 
         setTimeout(() => {
-            lightboxImage.src = "";
+
+            if (lightboxImage) {
+
+                lightboxImage.src = "";
+
+            }
+
         }, 300);
 
     }
 
-    lightboxClose.addEventListener(
-        "click",
-        closeLightbox
-    );
+
+    document
+        .querySelectorAll(
+            "[data-lightbox]"
+        )
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    if (
+                        !lightbox ||
+                        !lightboxImage
+                    ) return;
 
 
-    lightbox.addEventListener(
-        "click",
-        event => {
+                    const image =
+                        button.dataset
+                            .lightbox;
 
-            if (event.target === lightbox) {
-                closeLightbox();
+
+                    if (!image) return;
+
+
+                    lightboxImage.src =
+                        image;
+
+
+                    lightbox.classList.add(
+                        "active"
+                    );
+
+
+                    document.body.style
+                        .overflow =
+                        "hidden";
+
+                }
+            );
+
+        });
+
+
+    if (lightboxClose) {
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+    }
+
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    lightbox
+                ) {
+
+                    closeLightbox();
+
+                }
+
             }
+        );
 
-        }
-    );
+    }
 
+
+    /* =========================
+       ESCAPE
+    ========================= */
 
     document.addEventListener(
         "keydown",
         event => {
 
-            if (event.key === "Escape") {
+            if (
+                event.key ===
+                "Escape"
+            ) {
+
                 closeLightbox();
+
+
+                if (
+                    nav &&
+                    menuBtn
+                ) {
+
+                    nav.classList.remove(
+                        "open"
+                    );
+
+                    menuBtn.textContent =
+                        "☰";
+
+                    menuBtn.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
             }
 
         }
@@ -310,54 +604,109 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const backToTop =
-        document.getElementById("backToTop");
+        document.getElementById(
+            "backToTop"
+        );
 
-    window.addEventListener("scroll", () => {
+
+    function updateBackToTop() {
+
+        if (!backToTop) return;
 
         if (window.scrollY > 700) {
-            backToTop.classList.add("visible");
+
+            backToTop.classList.add(
+                "visible"
+            );
+
         } else {
-            backToTop.classList.remove("visible");
+
+            backToTop.classList.remove(
+                "visible"
+            );
+
         }
 
-    });
+    }
 
 
-    backToTop.addEventListener("click", () => {
+    window.addEventListener(
+        "scroll",
+        updateBackToTop,
+        { passive: true }
+    );
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+    updateBackToTop();
 
-    });
+
+    if (backToTop) {
+
+        backToTop.addEventListener(
+            "click",
+            () => {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
 
 
     /* =========================
        CURRENT YEAR
     ========================= */
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+    const year =
+        document.getElementById(
+            "year"
+        );
+
+
+    if (year) {
+
+        year.textContent =
+            new Date().getFullYear();
+
+    }
 
 
     /* =========================
-       CLOSE MENU ON ESC
+       PREVENT ACCIDENTAL
+       HORIZONTAL OVERFLOW
     ========================= */
 
-    document.addEventListener(
-        "keydown",
-        event => {
+    function checkOverflow() {
 
-            if (event.key === "Escape") {
+        document
+            .querySelectorAll("*")
+            .forEach(element => {
 
-                nav.classList.remove("open");
+                if (
+                    element.scrollWidth >
+                    element.clientWidth + 2
+                ) {
 
-                menuBtn.textContent = "☰";
+                    /*
+                     * Do not forcibly hide legitimate
+                     * horizontal content.
+                     * The main protection is already
+                     * provided by body/html overflow.
+                     */
 
-            }
+                }
 
-        }
+            });
+
+    }
+
+
+    window.addEventListener(
+        "resize",
+        checkOverflow
     );
 
 });
