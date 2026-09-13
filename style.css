@@ -2342,3 +2342,564 @@ html[dir="rtl"] .fact strong {
             48px;
     }
 }
+/* =========================================================
+   FINAL MOBILE + HERO + RTL FIX
+   ========================================================= */
+
+/* Prevent every element from creating horizontal overflow */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    max-width: 100%;
+}
+
+/* =========================================================
+   HERO - DESKTOP SAFETY
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: min(var(--max-width), 90%);
+    max-width: 100%;
+    min-width: 0;
+}
+
+.hero h1,
+.hero-tagline,
+.hero-meta,
+.hero-credit,
+.eyebrow {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* =========================================================
+   MOBILE HERO
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+        min-height: 100svh;
+        width: 100%;
+        overflow: hidden;
+
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        width: calc(100% - 40px);
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-top: 90px;
+        padding-bottom: 80px;
+
+        min-width: 0;
+    }
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(3rem, 14vw, 5rem);
+
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .hero-tagline {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 22px;
+
+        font-size: clamp(0.75rem, 3.2vw, 1rem);
+
+        line-height: 1.8;
+
+        letter-spacing: 0.08em;
+
+        overflow-wrap: break-word;
+    }
+
+    .hero-meta {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 7px 10px;
+
+        margin-top: 20px;
+
+        line-height: 1.7;
+    }
+
+    .hero-meta span {
+        white-space: normal;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        margin-top: 30px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        min-height: 54px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+        text-align: center;
+
+        white-space: normal;
+
+        overflow-wrap: break-word;
+    }
+
+    .hero-credit {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 40px;
+
+        line-height: 1.8;
+
+        overflow-wrap: break-word;
+    }
+
+    .hero-credit strong {
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .hero-content {
+        width: calc(100% - 30px);
+        max-width: 100%;
+
+        padding-top: 88px;
+        padding-bottom: 70px;
+    }
+
+    .eyebrow {
+        font-size: 0.58rem;
+
+        letter-spacing: 0.12em;
+
+        line-height: 1.8;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 16vw, 4.2rem);
+
+        line-height: 0.92;
+
+        letter-spacing: -0.025em;
+    }
+
+    .hero-tagline {
+        font-size: 0.72rem;
+
+        line-height: 1.9;
+
+        letter-spacing: 0.04em;
+    }
+
+    .hero-meta {
+        font-size: 0.62rem;
+
+        gap: 5px 8px;
+
+        letter-spacing: 0.08em;
+    }
+
+    .hero-buttons {
+        margin-top: 25px;
+    }
+
+    .hero-buttons .btn {
+        min-height: 56px;
+
+        font-size: 0.72rem;
+
+        letter-spacing: 0.04em;
+    }
+
+    .hero-credit {
+        margin-top: 35px;
+
+        font-size: 0.58rem;
+
+        letter-spacing: 0.08em;
+    }
+}
+
+
+/* =========================================================
+   RTL MOBILE
+   ========================================================= */
+
+html[dir="rtl"] body {
+    direction: rtl;
+
+    font-family:
+        "Noto Kufi Arabic",
+        Tahoma,
+        Arial,
+        sans-serif;
+}
+
+html[dir="rtl"] .hero-content {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .hero h1 {
+    text-align: right;
+
+    /* Arabic and English title can coexist safely */
+    unicode-bidi: plaintext;
+}
+
+html[dir="rtl"] .hero-tagline {
+    text-align: right;
+}
+
+html[dir="rtl"] .hero-meta {
+    justify-content: flex-start;
+    direction: rtl;
+}
+
+html[dir="rtl"] .hero-buttons {
+    align-items: stretch;
+}
+
+html[dir="rtl"] .hero-credit {
+    text-align: right;
+}
+
+html[dir="rtl"] .hero-credit strong {
+    text-align: right;
+}
+
+
+/* =========================================================
+   LTR MOBILE
+   ========================================================= */
+
+html[dir="ltr"] body {
+    direction: ltr;
+}
+
+html[dir="ltr"] .hero-content {
+    direction: ltr;
+    text-align: left;
+}
+
+html[dir="ltr"] .hero h1 {
+    text-align: left;
+}
+
+html[dir="ltr"] .hero-tagline {
+    text-align: left;
+}
+
+html[dir="ltr"] .hero-meta {
+    justify-content: flex-start;
+    direction: ltr;
+}
+
+html[dir="ltr"] .hero-credit {
+    text-align: left;
+}
+
+
+/* =========================================================
+   LONG SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+    min-width: 0;
+}
+
+.section-heading h2 {
+    min-width: 0;
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.section-label {
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   RTL SECTION HEADINGS
+   ========================================================= */
+
+html[dir="rtl"] .section-heading {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .section-heading h2,
+html[dir="rtl"] .section-label {
+    text-align: right;
+}
+
+
+/* =========================================================
+   MOBILE SECTION FIX
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .section-heading {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(1.8rem, 9vw, 3rem);
+
+        line-height: 1.25;
+
+        overflow-wrap: break-word;
+    }
+
+    .section-label {
+        font-size: 0.58rem;
+
+        letter-spacing: 0.12em;
+
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================================
+   MOBILE VIDEO
+   ========================================================= */
+
+.video-wrapper,
+.video-container,
+.full-film,
+.trailer,
+.watch-video {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.video-wrapper iframe,
+.video-container iframe,
+.full-film iframe,
+.trailer iframe,
+.watch-video iframe {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   SAFE RESPONSIVE IFRAME
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    iframe {
+        max-width: 100%;
+    }
+
+    .video-wrapper,
+    .video-container,
+    .full-film,
+    .trailer,
+    .watch-video {
+        overflow: hidden;
+    }
+}
+
+
+/* =========================================================
+   GENERAL MOBILE TEXT SAFETY
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    span,
+    strong,
+    a,
+    button {
+        max-width: 100%;
+    }
+
+    p {
+        overflow-wrap: break-word;
+    }
+
+    .film-copy,
+    .story-text,
+    .director-bio,
+    .membership-card,
+    .press-box,
+    .technology-note,
+    .contact-inner {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .membership-card h3,
+    .press-box h3,
+    .director-bio h3,
+    .visual-card h3 {
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* =========================================================
+   HEADER MOBILE - PREVENT CLIPPING
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 15px;
+        padding-right: 15px;
+
+        gap: 10px;
+    }
+
+    .brand {
+        min-width: 0;
+
+        font-size: 1rem;
+
+        letter-spacing: 0.08em;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-actions {
+        flex-shrink: 0;
+
+        gap: 7px;
+    }
+
+    .language-btn {
+        padding: 7px 10px;
+
+        white-space: nowrap;
+    }
+
+    .menu-btn {
+        flex-shrink: 0;
+    }
+
+}
+
+
+/* =========================================================
+   RTL HEADER
+   ========================================================= */
+
+html[dir="rtl"] .site-header {
+    direction: rtl;
+}
+
+html[dir="rtl"] .header-actions {
+    direction: ltr;
+}
+
+
+/* =========================================================
+   HARD HORIZONTAL OVERFLOW PROTECTION
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .hero *,
+    .section *,
+    footer * {
+        max-width: 100%;
+    }
+
+    .hero-content,
+    .container {
+        overflow: visible;
+    }
+
+}
