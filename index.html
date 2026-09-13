@@ -2,1379 +2,868 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <meta name="description"
+        content="THE MIRAM — The Light That No War Can Dim. A Sudanese AI-assisted 3D animated short film written and directed by Muawia Ismail Ibrahim.">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="THE MIRAM, Sudanese film, Sudanese animation, AI film, AI filmmaking, 3D animation, Muawia Ismail Ibrahim, Sudan, generative AI">
 
-<meta name="description"
-content="THE MIRAM — The Light That No War Can Dim. A Sudanese AI-assisted 3D animated short film by Muawia Ismail Ibrahim.">
+    <meta name="author" content="Muawia Ismail Ibrahim">
 
-<meta name="theme-color" content="#090909">
+    <meta name="theme-color" content="#07111f">
 
-<meta property="og:title"
-content="THE MIRAM | The Light That No War Can Dim">
+    <meta property="og:title" content="THE MIRAM | The Light That No War Can Dim">
+    <meta property="og:description"
+        content="A Sudanese AI-assisted 3D animated short film written and directed by Muawia Ismail Ibrahim.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/hero.jpeg">
 
-<meta property="og:description"
-content="A Sudanese AI-assisted 3D animated short film written and directed by Muawia Ismail Ibrahim.">
+    <title>THE MIRAM | Official Film</title>
 
-<title>THE MIRAM | Official Film</title>
-
-
-<!-- GOOGLE FONTS -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
-
-<!-- MAIN CSS -->
-
-<link rel="stylesheet" href="style.css">
-
-
-<style>
-
-/* =========================================================
-   FULL FILM
-========================================================= */
-
-.full-film {
-    background: #090909;
-}
-
-.full-film .video-frame {
-    width: 100%;
-    max-width: 1200px;
-    margin: 50px auto 20px;
-    aspect-ratio: 16 / 9;
-    position: relative;
-    overflow: hidden;
-    background: #000;
-}
-
-.full-film .video-frame iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
-
-.video-note {
-    text-align: center;
-    opacity: 0.65;
-    margin-top: 18px;
-}
-
-
-/* =========================================================
-   WATCH BUTTON
-========================================================= */
-
-.film-watch {
-    margin-top: 35px;
-}
-
-.film-watch .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* =========================================================
-   PROFESSIONAL MEMBERSHIPS
-========================================================= */
-
-.memberships {
-    background: #0b0b0b;
-}
-
-.memberships-intro {
-    max-width: 760px;
-    margin: 0 auto 55px;
-    text-align: center;
-    opacity: 0.75;
-    line-height: 1.8;
-}
-
-.memberships-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.membership-card {
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 38px 30px;
-    background: rgba(255,255,255,0.025);
-    transition: transform 0.3s ease,
-                border-color 0.3s ease,
-                background 0.3s ease;
-}
-
-.membership-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.045);
-}
-
-.membership-number {
-    display: block;
-    font-size: 12px;
-    letter-spacing: 3px;
-    opacity: 0.45;
-    margin-bottom: 25px;
-}
-
-.membership-card h3 {
-    font-family: "Cinzel", serif;
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.membership-card .membership-type {
-    display: block;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.55;
-    margin-bottom: 22px;
-}
-
-.membership-card p {
-    line-height: 1.8;
-    opacity: 0.75;
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .memberships-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .full-film .video-frame {
-        margin-top: 30px;
-    }
-
-    .membership-card {
-        padding: 30px 22px;
-    }
-
-}
-
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-title">THE <span>MIRAM</span></div>
+            <div class="loader-line"></div>
+            <div class="loader-sub">THE LIGHT THAT NO WAR CAN DIM</div>
+        </div>
+    </div>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+    <!-- SCROLL PROGRESS -->
+    <div id="scrollProgress"></div>
 
-<header class="site-header">
+    <!-- HEADER -->
+    <header class="site-header" id="header">
 
-    <a class="brand" href="#home">
-        THE <span>MIRAM</span>
-    </a>
-
-
-    <nav id="nav">
-
-        <a href="#film"
-           data-en="The Film"
-           data-ar="الفيلم">
-           The Film
+        <a href="#home" class="brand">
+            THE <span>MIRAM</span>
         </a>
 
-        <a href="#full-film"
-           data-en="Full Film"
-           data-ar="الفيلم الكامل">
-           Full Film
-        </a>
+        <nav id="nav">
 
-        <a href="#trailer"
-           data-en="Trailer"
-           data-ar="الإعلان">
-           Trailer
-        </a>
+            <a href="#film"
+               data-en="The Film"
+               data-ar="الفيلم">
+                The Film
+            </a>
 
-        <a href="#story"
-           data-en="Story"
-           data-ar="القصة">
-           Story
-        </a>
+            <a href="#story"
+               data-en="Story"
+               data-ar="القصة">
+                Story
+            </a>
 
-        <a href="#gallery"
-           data-en="Gallery"
-           data-ar="المعرض">
-           Gallery
-        </a>
+            <a href="#gallery"
+               data-en="Gallery"
+               data-ar="المعرض">
+                Gallery
+            </a>
 
-        <a href="#director"
-           data-en="Director"
-           data-ar="المخرج">
-           Director
-        </a>
+            <a href="#director"
+               data-en="Director"
+               data-ar="المخرج">
+                Director
+            </a>
 
-        <a href="#memberships"
-           data-en="Memberships"
-           data-ar="العضويات">
-           Memberships
-        </a>
+            <a href="#memberships"
+               data-en="Memberships"
+               data-ar="العضويات">
+                Memberships
+            </a>
 
-        <a href="#credits"
-           data-en="Credits"
-           data-ar="طاقم العمل">
-           Credits
-        </a>
+            <a href="#press"
+               data-en="Press"
+               data-ar="الإعلام">
+                Press
+            </a>
 
-        <a href="#contact"
-           data-en="Contact"
-           data-ar="تواصل">
-           Contact
-        </a>
+            <a href="#credits"
+               data-en="Credits"
+               data-ar="طاقم العمل">
+                Credits
+            </a>
 
-    </nav>
+            <a href="#contact"
+               data-en="Contact"
+               data-ar="تواصل">
+                Contact
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button id="langBtn" class="language-btn">
+                العربية
+            </button>
+
+            <button id="menuBtn"
+                    class="menu-btn"
+                    aria-label="Open menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
 
 
-    <div class="actions">
+    <!-- HERO -->
+    <main>
 
-        <button id="langBtn">
-            العربية
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-vignette"></div>
+
+            <div class="hero-content reveal">
+
+                <div class="eyebrow"
+                     data-en="A SUDANESE 3D ANIMATED SHORT FILM"
+                     data-ar="فيلم سوداني قصير بتقنية التحريك ثلاثي الأبعاد">
+                    A SUDANESE 3D ANIMATED SHORT FILM
+                </div>
+
+                <h1>
+                    THE <span>MIRAM</span>
+                </h1>
+
+                <p class="hero-tagline"
+                   data-en="THE LIGHT THAT NO WAR CAN DIM"
+                   data-ar="النور الذي لا تستطيع أي حرب أن تطفئه">
+                    THE LIGHT THAT NO WAR CAN DIM
+                </p>
+
+                <div class="hero-meta">
+
+                    <span>07:15</span>
+                    <i></i>
+                    <span>ENGLISH</span>
+                    <i></i>
+                    <span>4K</span>
+                    <i></i>
+                    <span>16:9</span>
+
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a href="#film"
+                       class="btn btn-primary"
+                       data-en="DISCOVER THE FILM"
+                       data-ar="اكتشف الفيلم">
+                        DISCOVER THE FILM
+                    </a>
+
+                    <a href="#story"
+                       class="btn btn-outline"
+                       data-en="THE STORY"
+                       data-ar="القصة">
+                        THE STORY
+                    </a>
+
+                </div>
+
+                <div class="hero-credit">
+                    <span data-en="WRITTEN & DIRECTED BY"
+                          data-ar="تأليف وإخراج">
+                        WRITTEN & DIRECTED BY
+                    </span>
+
+                    <strong>
+                        MUAWIA ISMAIL IBRAHIM
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span data-en="SCROLL TO EXPLORE"
+                      data-ar="مرر للاستكشاف">
+                    SCROLL TO EXPLORE
+                </span>
+                <div class="scroll-line"></div>
+            </div>
+
+        </section>
+
+
+        <!-- FILM -->
+        <section class="section film-section" id="film">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="THE FILM"
+                              data-ar="الفيلم">
+                            THE FILM
+                        </span>
+
+                        <h2 data-en="A Story of Light, Hope and Resilience"
+                            data-ar="حكاية عن النور والأمل والصمود">
+                            A Story of Light, Hope and Resilience
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="film-grid">
+
+                    <div class="film-copy reveal">
+
+                        <p class="lead"
+                           data-en="THE MIRAM is a Sudanese AI-assisted 3D animated short film about hope surviving in the shadow of war."
+                           data-ar="ميرام فيلم سوداني قصير بالتحريك ثلاثي الأبعاد، استخدمت فيه تقنيات الذكاء الاصطناعي، ويحكي عن بقاء الأمل في ظل الحرب.">
+                            THE MIRAM is a Sudanese AI-assisted 3D animated short film about hope surviving in the shadow of war.
+                        </p>
+
+                        <p data-en="Through the journey of a young Sudanese girl, the film explores education, separation, memory and the enduring strength of hope."
+                           data-ar="ومن خلال رحلة فتاة سودانية صغيرة، يستكشف الفيلم التعليم والفقد والذاكرة والقوة المستمرة للأمل.">
+                            Through the journey of a young Sudanese girl, the film explores education, separation, memory and the enduring strength of hope.
+                        </p>
+
+                        <p data-en="Generative AI was used as a filmmaking tool across visual development, storytelling, character and environment design, cinematic production and digital post-production."
+                           data-ar="اُستخدم الذكاء الاصطناعي التوليدي كأداة سينمائية في تطوير الرؤية البصرية والسرد وتصميم الشخصيات والبيئات والإنتاج السينمائي وما بعد الإنتاج الرقمي.">
+                            Generative AI was used as a filmmaking tool across visual development, storytelling, character and environment design, cinematic production and digital post-production.
+                        </p>
+
+                    </div>
+
+
+                    <div class="film-facts reveal">
+
+                        <div class="fact">
+                            <span>RUNTIME</span>
+                            <strong>07:15</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>LANGUAGE</span>
+                            <strong>ENGLISH</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>FORMAT</span>
+                            <strong>16:9</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>RESOLUTION</span>
+                            <strong>4K</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>ORIGIN</span>
+                            <strong>SUDAN</strong>
+                        </div>
+
+                        <div class="fact">
+                            <span>YEAR</span>
+                            <strong>2026</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORY -->
+        <section class="section story-section" id="story">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="THE STORY"
+                              data-ar="القصة">
+                            THE STORY
+                        </span>
+
+                        <h2 data-en="When hope becomes a journey"
+                            data-ar="حين يصبح الأمل رحلة">
+                            When hope becomes a journey
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="story-layout">
+
+                    <div class="story-image reveal">
+
+                        <button class="image-button"
+                                data-lightbox="assets/hero.jpeg">
+
+                            <img src="assets/hero.jpeg"
+                                 alt="THE MIRAM — Official Film"
+                                 loading="lazy">
+
+                            <span class="image-expand">
+                                +
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="story-text reveal">
+
+                        <div class="story-quote">
+                            “THE LIGHT THAT NO WAR CAN DIM.”
+                        </div>
+
+                        <p data-en="Hawa is a 19-year-old Sudanese girl whose life is transformed by conflict. Forced away from home, she carries with her the dream of education and the memory of the people she loves."
+                           data-ar="حواء فتاة سودانية في التاسعة عشرة من عمرها تتغير حياتها بسبب الحرب. تبتعد عن موطنها، لكنها تحمل معها حلم التعليم وذكريات الأشخاص الذين تحبهم.">
+                            Hawa is a 19-year-old Sudanese girl whose life is transformed by conflict. Forced away from home, she carries with her the dream of education and the memory of the people she loves.
+                        </p>
+
+                        <p data-en="Her journey eventually leads her to Al Dabbah, where she sits for the Sudanese Secondary Certificate examination."
+                           data-ar="تقودها رحلتها في النهاية إلى الدبة، حيث تجلس لامتحان الشهادة السودانية.">
+                            Her journey eventually leads her to Al Dabbah, where she sits for the Sudanese Secondary Certificate examination.
+                        </p>
+
+                        <p data-en="Against extraordinary circumstances, Hawa achieves third place in Sudan. Then comes the discovery that changes everything: her mother is still alive."
+                           data-ar="وفي مواجهة ظروف استثنائية، تحقق حواء المركز الثالث على مستوى السودان. ثم تأتي الحقيقة التي تغير كل شيء: والدتها ما زالت على قيد الحياة.">
+                            Against extraordinary circumstances, Hawa achieves third place in Sudan. Then comes the discovery that changes everything: her mother is still alive.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALLERY -->
+        <section class="section gallery-section" id="gallery">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="VISUAL LANGUAGE"
+                              data-ar="اللغة البصرية">
+                            VISUAL LANGUAGE
+                        </span>
+
+                        <h2 data-en="A cinematic world shaped by light"
+                            data-ar="عالم سينمائي تصنعه الإضاءة">
+                            A cinematic world shaped by light
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <button class="gallery-card gallery-main reveal"
+                            data-lightbox="assets/hero.jpeg">
+
+                        <img src="assets/hero.jpeg"
+                             alt="THE MIRAM visual"
+                             loading="lazy">
+
+                        <div class="gallery-overlay">
+                            <span>THE MIRAM</span>
+                            <strong>01 / FILM FRAME</strong>
+                        </div>
+
+                    </button>
+
+
+                    <article class="visual-card reveal">
+
+                        <span>02</span>
+
+                        <h3 data-en="Sudanese Identity"
+                            data-ar="الهوية السودانية">
+                            Sudanese Identity
+                        </h3>
+
+                        <p data-en="Visual storytelling rooted in Sudanese characters, atmosphere and cultural memory."
+                           data-ar="سرد بصري يستند إلى الشخصيات السودانية والأجواء والذاكرة الثقافية.">
+                            Visual storytelling rooted in Sudanese characters, atmosphere and cultural memory.
+                        </p>
+
+                    </article>
+
+
+                    <article class="visual-card reveal">
+
+                        <span>03</span>
+
+                        <h3 data-en="Light & Emotion"
+                            data-ar="الضوء والعاطفة">
+                            Light & Emotion
+                        </h3>
+
+                        <p data-en="A cinematic visual language where light becomes a metaphor for hope."
+                           data-ar="لغة بصرية سينمائية يصبح فيها الضوء استعارة للأمل.">
+                            A cinematic visual language where light becomes a metaphor for hope.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIRECTOR -->
+        <section class="section director-section" id="director">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        04
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="THE DIRECTOR"
+                              data-ar="المخرج">
+                            THE DIRECTOR
+                        </span>
+
+                        <h2 data-en="Muawia Ismail Ibrahim"
+                            data-ar="معاوية إسماعيل إبراهيم">
+                            Muawia Ismail Ibrahim
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="director-layout">
+
+                    <div class="director-mark reveal">
+                        MI
+                    </div>
+
+
+                    <div class="director-bio reveal">
+
+                        <h3 data-en="Sudanese Filmmaker & Director"
+                            data-ar="مخرج وصانع أفلام سوداني">
+                            Sudanese Filmmaker & Director
+                        </h3>
+
+                        <p data-en="Muawia Ismail Ibrahim is a Sudanese filmmaker, writer, producer and AI Prompt Engineering specialist working at the intersection of cinema, generative AI and digital creativity."
+                           data-ar="معاوية إسماعيل إبراهيم مخرج وصانع أفلام وكاتب ومنتج سوداني ومتخصص في هندسة أوامر الذكاء الاصطناعي، ويعمل عند تقاطع السينما والذكاء الاصطناعي التوليدي والإبداع الرقمي.">
+                            Muawia Ismail Ibrahim is a Sudanese filmmaker, writer, producer and AI Prompt Engineering specialist working at the intersection of cinema, generative AI and digital creativity.
+                        </p>
+
+                        <p data-en="His work explores AI-assisted storytelling, visual development, character and environment design, cinematic production and digital post-production."
+                           data-ar="تركز أعماله على السرد المدعوم بالذكاء الاصطناعي، والتطوير البصري، وتصميم الشخصيات والبيئات، والإنتاج السينمائي وما بعد الإنتاج الرقمي.">
+                            His work explores AI-assisted storytelling, visual development, character and environment design, cinematic production and digital post-production.
+                        </p>
+
+                        <p data-en="His professional affiliations include IAIC, AICFG and ADADA."
+                           data-ar="تشمل عضوياته المهنية IAIC وAICFG وADADA.">
+                            His professional affiliations include IAIC, AICFG and ADADA.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEMBERSHIPS -->
+        <section class="section memberships-section" id="memberships">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        05
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="PROFESSIONAL MEMBERSHIPS"
+                              data-ar="العضويات المهنية">
+                            PROFESSIONAL MEMBERSHIPS
+                        </span>
+
+                        <h2 data-en="Professional affiliations"
+                            data-ar="العضويات والانتماءات المهنية">
+                            Professional affiliations
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <p class="membership-intro reveal"
+                   data-en="Professional affiliations reflecting an ongoing commitment to AI filmmaking, digital arts and emerging creative technologies."
+                   data-ar="انتماءات مهنية تعكس التزاماً مستمراً بصناعة الأفلام بالذكاء الاصطناعي والفنون الرقمية والتقنيات الإبداعية الناشئة.">
+                    Professional affiliations reflecting an ongoing commitment to AI filmmaking, digital arts and emerging creative technologies.
+                </p>
+
+
+                <div class="membership-grid">
+
+                    <article class="membership-card reveal">
+
+                        <div class="membership-number">
+                            01
+                        </div>
+
+                        <div class="membership-logo">
+                            IAIC
+                        </div>
+
+                        <h3>
+                            International Artificial Intelligence Committee
+                        </h3>
+
+                        <span class="membership-status">
+                            LOYALTY MEMBER
+                        </span>
+
+                        <p data-en="Recognized as an AI Filmmaker & Director from Sudan."
+                           data-ar="مدرج بصفته صانع أفلام ومخرجاً بالذكاء الاصطناعي من السودان.">
+                            Recognized as an AI Filmmaker & Director from Sudan.
+                        </p>
+
+                    </article>
+
+
+                    <article class="membership-card reveal">
+
+                        <div class="membership-number">
+                            02
+                        </div>
+
+                        <div class="membership-logo">
+                            AICFG
+                        </div>
+
+                        <h3>
+                            AI Cinematic Films Guild
+                        </h3>
+
+                        <span class="membership-status">
+                            MEMBER
+                        </span>
+
+                        <p data-en="Professional affiliation focused on AI filmmaking and cinematic innovation."
+                           data-ar="انتماء مهني يركز على صناعة الأفلام بالذكاء الاصطناعي والابتكار السينمائي.">
+                            Professional affiliation focused on AI filmmaking and cinematic innovation.
+                        </p>
+
+                    </article>
+
+
+                    <article class="membership-card reveal">
+
+                        <div class="membership-number">
+                            03
+                        </div>
+
+                        <div class="membership-logo">
+                            ADADA
+                        </div>
+
+                        <h3>
+                            Asia Digital Art and Design Association
+                        </h3>
+
+                        <span class="membership-status">
+                            MEMBER
+                        </span>
+
+                        <p data-en="Professional membership connecting digital art, design and emerging creative technologies."
+                           data-ar="عضوية مهنية تجمع بين الفن الرقمي والتصميم والتقنيات الإبداعية الناشئة.">
+                            Professional membership connecting digital art, design and emerging creative technologies.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRESS -->
+        <section class="section press-section" id="press">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        06
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="PRESS & FESTIVALS"
+                              data-ar="الإعلام والمهرجانات">
+                            PRESS & FESTIVALS
+                        </span>
+
+                        <h2 data-en="For screenings, festivals and media"
+                            data-ar="للعروض والمهرجانات والإعلام">
+                            For screenings, festivals and media
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="press-box reveal">
+
+                    <div>
+
+                        <span class="press-kicker">
+                            THE MIRAM
+                        </span>
+
+                        <h3 data-en="A Sudanese story created at the intersection of cinema and emerging technology."
+                            data-ar="قصة سودانية ولدت عند تقاطع السينما والتكنولوجيا الناشئة.">
+                            A Sudanese story created at the intersection of cinema and emerging technology.
+                        </h3>
+
+                    </div>
+
+                    <a href="#contact"
+                       class="btn btn-primary"
+                       data-en="SCREENING & MEDIA"
+                       data-ar="العروض والإعلام">
+                        SCREENING & MEDIA
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREDITS -->
+        <section class="section credits-section" id="credits">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-number">
+                        07
+                    </div>
+
+                    <div>
+                        <span class="section-label"
+                              data-en="CREDITS"
+                              data-ar="الاعتمادات">
+                            CREDITS
+                        </span>
+
+                        <h2 data-en="Production"
+                            data-ar="الإنتاج">
+                            Production
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="credits-grid">
+
+                    <div class="credit-item reveal">
+                        <span>WRITTEN & DIRECTED BY</span>
+                        <strong>MUAWIA ISMAIL IBRAHIM</strong>
+                    </div>
+
+                    <div class="credit-item reveal">
+                        <span>STORY & VISUAL DEVELOPMENT</span>
+                        <strong>MUAWIA ISMAIL IBRAHIM</strong>
+                    </div>
+
+                    <div class="credit-item reveal">
+                        <span>GENERATIVE AI</span>
+                        <strong>AI-ASSISTED PRODUCTION</strong>
+                    </div>
+
+                    <div class="credit-item reveal">
+                        <span>EDITING</span>
+                        <strong>CAPCUT</strong>
+                    </div>
+
+                    <div class="credit-item reveal">
+                        <span>SUBTITLES</span>
+                        <strong>SHOTCUT</strong>
+                    </div>
+
+                    <div class="credit-item reveal">
+                        <span>FORMAT</span>
+                        <strong>4K HDR / 16:9</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="technology-note reveal">
+
+                    <span>AI TOOL TRANSPARENCY</span>
+
+                    <p data-en="Generative AI tools were used as creative filmmaking instruments. The production process combines human direction, storytelling, prompting, visual development, editing and post-production."
+                       data-ar="اُستخدمت أدوات الذكاء الاصطناعي التوليدي كأدوات إبداعية في صناعة الفيلم، مع الجمع بين التوجيه البشري والسرد وكتابة الأوامر والتطوير البصري والمونتاج وما بعد الإنتاج.">
+                        Generative AI tools were used as creative filmmaking instruments. The production process combines human direction, storytelling, prompting, visual development, editing and post-production.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+
+            <div class="container">
+
+                <div class="contact-inner reveal">
+
+                    <span class="section-label"
+                          data-en="CONTACT"
+                          data-ar="تواصل">
+                        CONTACT
+                    </span>
+
+                    <h2 data-en="For screenings, collaborations and media inquiries."
+                        data-ar="للعروض والتعاون والاستفسارات الإعلامية.">
+                        For screenings, collaborations and media inquiries.
+                    </h2>
+
+                    <p data-en="THE MIRAM is available for festival, cultural and creative industry opportunities."
+                       data-ar="الفيلم متاح للمهرجانات والفعاليات الثقافية وفرص التعاون في الصناعات الإبداعية.">
+                        THE MIRAM is available for festival, cultural and creative industry opportunities.
+                    </p>
+
+                    <div class="contact-name">
+                        MUAWIA ISMAIL IBRAHIM
+                    </div>
+
+                    <div class="contact-role"
+                         data-en="Sudanese Filmmaker & Director"
+                         data-ar="مخرج وصانع أفلام سوداني">
+                        Sudanese Filmmaker & Director
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                THE <span>MIRAM</span>
+            </div>
+
+            <div class="footer-credit">
+                WRITTEN & DIRECTED BY
+                <strong>MUAWIA ISMAIL IBRAHIM</strong>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> Muawia Ismail Ibrahim
+            </span>
+
+            <span>
+                SUDAN · AI-ASSISTED CINEMA
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop"
+            aria-label="Back to top">
+        ↑
+    </button>
+
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox">
+
+        <button id="lightboxClose"
+                aria-label="Close">
+            ×
         </button>
 
-        <button id="menuBtn"
-                class="menu"
-                aria-label="Open menu">
-            ☰
-        </button>
-
-    </div>
-
-</header>
-
-
-
-<main>
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-bg"></div>
-
-    <div class="hero-vignette"></div>
-
-
-    <div class="hero-content">
-
-        <div class="eyebrow"
-             data-en="A SUDANESE 3D ANIMATED SHORT FILM"
-             data-ar="فيلم سوداني قصير للرسوم المتحركة ثلاثية الأبعاد">
-
-            A SUDANESE 3D ANIMATED SHORT FILM
-
-        </div>
-
-
-        <h1>
-            THE<br>
-            <span>MIRAM</span>
-        </h1>
-
-
-        <p class="tagline"
-           data-en="THE LIGHT THAT NO WAR CAN DIM"
-           data-ar="النور الذي لا تستطيع أي حرب أن تطفئه">
-
-            THE LIGHT THAT NO WAR CAN DIM
-
-        </p>
-
-
-        <div class="meta">
-
-            <span>7:15</span>
-
-            <b></b>
-
-            <span>ENGLISH</span>
-
-            <b></b>
-
-            <span>4K</span>
-
-            <b></b>
-
-            <span>16:9</span>
-
-        </div>
-
-
-        <div class="hero-cta">
-
-            <a class="btn primary"
-               href="#full-film"
-               data-en="WATCH THE FILM"
-               data-ar="شاهد الفيلم">
-
-                WATCH THE FILM
-
-            </a>
-
-
-            <a class="btn ghost"
-               href="#film"
-               data-en="DISCOVER THE FILM"
-               data-ar="اكتشف الفيلم">
-
-                DISCOVER THE FILM
-
-            </a>
-
-        </div>
+        <img id="lightboxImage"
+             src=""
+             alt="THE MIRAM">
 
     </div>
 
 
-    <div class="hero-credit">
-
-        WRITTEN &amp; DIRECTED BY<br>
-
-        <strong>
-            MUAWIA ISMAIL IBRAHIM
-        </strong>
-
-    </div>
-
-
-    <div class="scroll">
-
-        01
-
-        <span></span>
-
-        EXPLORE
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     THE FILM
-========================================================= -->
-
-<section class="section film" id="film">
-
-    <div class="section-label">
-        01 / THE FILM
-    </div>
-
-
-    <div class="section-title">
-
-        <p class="kicker"
-           data-en="OFFICIAL FILM"
-           data-ar="الفيلم الرسمي">
-
-            OFFICIAL FILM
-
-        </p>
-
-
-        <h2
-            data-en="A story of courage,<br><em>education and hope.</em>"
-            data-ar="حكاية عن الشجاعة،<br><em>والتعليم والأمل.</em>">
-
-            A story of courage,
-            <br>
-            <em>education and hope.</em>
-
-        </h2>
-
-    </div>
-
-
-
-    <div class="film-grid">
-
-
-        <div class="poster-wrap">
-
-            <div class="poster">
-
-                <img src="assets/poster.png"
-                     alt="THE MIRAM official poster">
-
-                <div class="img-fallback">
-
-                    THE MIRAM
-
-                    <br>
-
-                    <small>
-                        POSTER
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <span class="poster-caption">
-
-                THE MIRAM / OFFICIAL POSTER
-
-            </span>
-
-        </div>
-
-
-
-        <div class="film-copy">
-
-
-            <p class="lead"
-               data-en="THE MIRAM follows Hawa, a 19-year-old student from Darfur whose life is transformed by war. Forced onto a dangerous journey across the desert, she carries grief, memories and one thing the conflict cannot take from her: her dream of education."
-               data-ar="يتابع فيلم «ميرام» حواء، طالبة سودانية تبلغ من العمر 19 عاماً من دارفور، تتغير حياتها بسبب الحرب. تُجبر على رحلة شاقة عبر الصحراء، وتحمل معها الفقد والذكريات، وشيئاً واحداً لا تستطيع الحرب انتزاعه منها: حلمها بالتعليم.">
-
-                THE MIRAM follows Hawa, a 19-year-old student from Darfur whose life is transformed by war. Forced onto a dangerous journey across the desert, she carries grief, memories and one thing the conflict cannot take from her: her dream of education.
-
-            </p>
-
-
-            <div class="rule"></div>
-
-
-            <div class="facts">
-
-                <div>
-                    <strong>7:15</strong>
-                    <span>RUNTIME</span>
-                </div>
-
-                <div>
-                    <strong>2026</strong>
-                    <span>YEAR</span>
-                </div>
-
-                <div>
-                    <strong>4K</strong>
-                    <span>FORMAT</span>
-                </div>
-
-                <div>
-                    <strong>EN</strong>
-                    <span>LANGUAGE</span>
-                </div>
-
-            </div>
-
-
-            <!-- WATCH FULL FILM BUTTON -->
-
-            <div class="film-watch">
-
-                <a class="btn primary"
-                   href="#full-film"
-                   data-en="WATCH THE FULL FILM"
-                   data-ar="شاهد الفيلم كاملاً">
-
-                    WATCH THE FULL FILM
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FULL FILM
-========================================================= -->
-
-<section class="section full-film"
-         id="full-film">
-
-    <div class="section-label">
-        02 / FULL FILM
-    </div>
-
-
-    <div class="center-head">
-
-        <p class="kicker"
-           data-en="OFFICIAL FULL FILM"
-           data-ar="الفيلم الرسمي الكامل">
-
-            OFFICIAL FULL FILM
-
-        </p>
-
-
-        <h2
-            data-en="Watch THE MIRAM <em>in full.</em>"
-            data-ar="شاهد «ميرام» <em>كاملاً.</em>">
-
-            Watch THE MIRAM
-            <em>in full.</em>
-
-        </h2>
-
-    </div>
-
-
-    <!-- GOOGLE DRIVE VIDEO -->
-
-    <div class="video-frame">
-
-        <iframe
-            src="https://drive.google.com/file/d/1jY_2_wdXknXbRDLWls0eClI6RdH7rERY/preview"
-            title="THE MIRAM — Full Film"
-            allow="autoplay; encrypted-media; fullscreen"
-            allowfullscreen>
-        </iframe>
-
-    </div>
-
-
-    <p class="video-note"
-       data-en="Official full film hosted on Google Drive."
-       data-ar="الفيلم الرسمي الكامل مستضاف عبر Google Drive.">
-
-        Official full film hosted on Google Drive.
-
-    </p>
-
-
-    <!-- DIRECT GOOGLE DRIVE LINK -->
-
-    <div class="film-watch"
-         style="text-align:center;">
-
-        <a class="btn ghost"
-           href="https://drive.google.com/file/d/1jY_2_wdXknXbRDLWls0eClI6RdH7rERY/view?usp=drivesdk"
-           target="_blank"
-           rel="noopener noreferrer"
-           data-en="OPEN FILM ON GOOGLE DRIVE"
-           data-ar="فتح الفيلم على Google Drive">
-
-            OPEN FILM ON GOOGLE DRIVE
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     TRAILER
-========================================================= -->
-
-<section class="section trailer"
-         id="trailer">
-
-    <div class="section-label">
-        03 / TRAILER
-    </div>
-
-
-    <div class="center-head">
-
-        <p class="kicker"
-           data-en="OFFICIAL TRAILER"
-           data-ar="الإعلان الرسمي">
-
-            OFFICIAL TRAILER
-
-        </p>
-
-
-        <h2
-            data-en="The light <em>remains.</em>"
-            data-ar="النور <em>يبقى.</em>">
-
-            The light
-            <em>remains.</em>
-
-        </h2>
-
-    </div>
-
-
-    <div class="video-frame">
-
-        <iframe
-            id="trailerFrame"
-            title="THE MIRAM official trailer"
-            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowfullscreen>
-        </iframe>
-
-    </div>
-
-
-    <p class="video-note"
-       data-en="Official trailer hosted on Google Drive."
-       data-ar="الإعلان الرسمي مستضاف عبر Google Drive.">
-
-        Official trailer hosted on Google Drive.
-
-    </p>
-
-</section>
-
-
-
-<!-- =========================================================
-     STORY
-========================================================= -->
-
-<section class="section story"
-         id="story">
-
-    <div class="section-label">
-        04 / STORY
-    </div>
-
-
-    <div class="section-title">
-
-        <p class="kicker"
-           data-en="THE STORY"
-           data-ar="القصة">
-
-            THE STORY
-
-        </p>
-
-
-        <h2
-            data-en="She lost almost everything.<br><em>She did not lose her dream.</em>"
-            data-ar="فقدت كل شيء تقريباً.<br><em>لكنها لم تفقد حلمها.</em>">
-
-            She lost almost everything.
-            <br>
-            <em>She did not lose her dream.</em>
-
-        </h2>
-
-    </div>
-
-
-
-    <div class="story-grid">
-
-
-        <article>
-
-            <span>01</span>
-
-            <h3>
-                EL GENEINA
-            </h3>
-
-            <p
-                data-en="Hawa's peaceful life and her dream of becoming a doctor are shattered as conflict reaches her hometown."
-                data-ar="تتحطم حياة حواء الهادئة وحلمها بأن تصبح طبيبة عندما يصل الصراع إلى مدينتها.">
-
-                Hawa's peaceful life and her dream of becoming a doctor are shattered as conflict reaches her hometown.
-
-            </p>
-
-        </article>
-
-
-
-        <article>
-
-            <span>02</span>
-
-            <h3>
-                THE JOURNEY
-            </h3>
-
-            <p
-                data-en="Alone and exhausted, she crosses the Darfur desert carrying memories, books and a determination to survive."
-                data-ar="وحيدة ومرهقة، تعبر حواء صحراء دارفور حاملة ذكرياتها وكتبها وإصرارها على النجاة.">
-
-                Alone and exhausted, she crosses the Darfur desert carrying memories, books and a determination to survive.
-
-            </p>
-
-        </article>
-
-
-
-        <article>
-
-            <span>03</span>
-
-            <h3>
-                AL DABBAH
-            </h3>
-
-            <p
-                data-en="A new school becomes a doorway to a future she refuses to surrender."
-                data-ar="تصبح مدرسة جديدة بوابة إلى مستقبل ترفض حواء الاستسلام عنه.">
-
-                A new school becomes a doorway to a future she refuses to surrender.
-
-            </p>
-
-        </article>
-
-
-
-        <article>
-
-            <span>04</span>
-
-            <h3>
-                THE MIRAM
-            </h3>
-
-            <p
-                data-en="Her achievement becomes a quiet victory: education survives even when war tries to take everything away."
-                data-ar="يصبح نجاحها انتصاراً هادئاً: يبقى التعليم حياً حتى عندما تحاول الحرب انتزاع كل شيء.">
-
-                Her achievement becomes a quiet victory: education survives even when war tries to take everything away.
-
-            </p>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     GALLERY
-========================================================= -->
-
-<section class="section gallery"
-         id="gallery">
-
-    <div class="section-label">
-        05 / GALLERY
-    </div>
-
-
-    <div class="section-title">
-
-        <p class="kicker"
-           data-en="PRODUCTION STILLS"
-           data-ar="صور من الفيلم">
-
-            PRODUCTION STILLS
-
-        </p>
-
-
-        <h2
-            data-en="A Sudanese story,<br><em>frame by frame.</em>"
-            data-ar="حكاية سودانية،<br><em>لقطة بعد لقطة.</em>">
-
-            A Sudanese story,
-            <br>
-            <em>frame by frame.</em>
-
-        </h2>
-
-    </div>
-
-
-
-    <div class="gallery-grid">
-
-
-        <figure>
-
-            <img src="assets/still-01.png"
-                 alt="THE MIRAM still 01">
-
-            <figcaption>
-                01 / EL GENEINA
-            </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-            <img src="assets/still-02.png"
-                 alt="THE MIRAM still 02">
-
-            <figcaption>
-                02 / THE JOURNEY
-            </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-            <img src="assets/still-03.png"
-                 alt="THE MIRAM still 03">
-
-            <figcaption>
-                03 / AL DABBAH
-            </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-            <img src="assets/still-04.png"
-                 alt="THE MIRAM still 04">
-
-            <figcaption>
-                04 / THE NILE
-            </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-            <img src="assets/still-05.png"
-                 alt="THE MIRAM still 05">
-
-            <figcaption>
-                05 / REUNION
-            </figcaption>
-
-        </figure>
-
-
-        <figure>
-
-            <img src="assets/still-06.png"
-                 alt="THE MIRAM still 06">
-
-            <figcaption>
-                06 / HOPE
-            </figcaption>
-
-        </figure>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     DIRECTOR
-========================================================= -->
-
-<section class="section director"
-         id="director">
-
-    <div class="section-label">
-        06 / THE FILMMAKER
-    </div>
-
-
-    <div class="director-grid">
-
-
-        <div class="director-photo">
-
-            <img src="assets/director.png"
-                 alt="Muawia Ismail Ibrahim">
-
-            <div class="img-fallback">
-
-                MUAWIA
-
-                <br>
-
-                <small>
-                    ISMAIL IBRAHIM
-                </small>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="director-copy">
-
-
-            <p class="kicker"
-               data-en="WRITER • PRODUCER • DIRECTOR"
-               data-ar="كاتب • منتج • مخرج">
-
-                WRITER • PRODUCER • DIRECTOR
-
-            </p>
-
-
-            <h2>
-
-                Muawia
-                <br>
-                <em>Ismail Ibrahim</em>
-
-            </h2>
-
-
-            <p
-                data-en="Muawia Ismail Ibrahim is a Sudanese filmmaker, writer, producer, and AI Prompt Engineering specialist with a strong interest in digital storytelling, emerging technologies, African heritage, and historical narratives."
-                data-ar="معاوية إسماعيل إبراهيم مخرج وكاتب ومنتج سوداني ومتخصص في هندسة برومبتات الذكاء الاصطناعي، وله اهتمام قوي بالسرد الرقمي والتقنيات الناشئة والتراث الأفريقي والسرديات التاريخية.">
-
-                Muawia Ismail Ibrahim is a Sudanese filmmaker, writer, producer, and AI Prompt Engineering specialist with a strong interest in digital storytelling, emerging technologies, African heritage, and historical narratives.
-
-            </p>
-
-
-            <p
-                data-en="His creative work explores the use of generative artificial intelligence as a filmmaking tool, integrating AI-assisted storytelling, visual development, character and environment design, cinematic production, and digital post-production."
-                data-ar="تستكشف أعماله الإبداعية استخدام الذكاء الاصطناعي التوليدي كأداة لصناعة الأفلام، من خلال دمج السرد بمساعدة الذكاء الاصطناعي والتطوير البصري وتصميم الشخصيات والبيئات والإنتاج السينمائي وما بعد الإنتاج الرقمي.">
-
-                His creative work explores the use of generative artificial intelligence as a filmmaking tool, integrating AI-assisted storytelling, visual development, character and environment design, cinematic production, and digital post-production.
-
-            </p>
-
-
-            <p
-                data-en="Muawia is a member of the International Artificial Intelligence Committee (IAIC), the AI Cinematic Films Guild (AICFG), and the Asia Digital Art and Design Association (ADADA). His professional interests focus on AI filmmaking, digital arts, emerging creative technologies, and expanding opportunities for African creators."
-                data-ar="معاوية عضو في International Artificial Intelligence Committee (IAIC)، وAI Cinematic Films Guild (AICFG)، وAsia Digital Art and Design Association (ADADA). وتركز اهتماماته المهنية على صناعة الأفلام بالذكاء الاصطناعي والفنون الرقمية والتقنيات الإبداعية الناشئة وتوسيع الفرص أمام المبدعين الأفارقة.">
-
-                Muawia is a member of the International Artificial Intelligence Committee (IAIC), the AI Cinematic Films Guild (AICFG), and the Asia Digital Art and Design Association (ADADA). His professional interests focus on AI filmmaking, digital arts, emerging creative technologies, and expanding opportunities for African creators.
-
-            </p>
-
-
-            <p
-                data-en="He is committed to developing innovative cinematic projects that connect cultural heritage and contemporary technology while maintaining a strong emphasis on storytelling, visual identity, and creative direction."
-                data-ar="وهو ملتزم بتطوير مشاريع سينمائية مبتكرة تصل بين التراث الثقافي والتكنولوجيا المعاصرة، مع الحفاظ على تركيز قوي على السرد والهوية البصرية والإخراج الإبداعي.">
-
-                He is committed to developing innovative cinematic projects that connect cultural heritage and contemporary technology while maintaining a strong emphasis on storytelling, visual identity, and creative direction.
-
-            </p>
-
-
-            <div class="director-tag">
-
-                SUDAN
-
-                <span>•</span>
-
-                INDEPENDENT FILMMAKER
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PROFESSIONAL MEMBERSHIPS
-========================================================= -->
-
-<section class="section memberships"
-         id="memberships">
-
-    <div class="section-label">
-        07 / PROFESSIONAL MEMBERSHIPS
-    </div>
-
-
-    <div class="section-title">
-
-        <p class="kicker"
-           data-en="PROFESSIONAL AFFILIATIONS"
-           data-ar="العضويات المهنية">
-
-            PROFESSIONAL AFFILIATIONS
-
-        </p>
-
-
-        <h2
-            data-en="Connected to the global <em>creative and AI community.</em>"
-            data-ar="عضويات مهنية ضمن <em>مجتمعات الذكاء الاصطناعي والإبداع العالمية.</em>">
-
-            Connected to the global
-            <br>
-            <em>creative and AI community.</em>
-
-        </h2>
-
-    </div>
-
-
-    <p class="memberships-intro"
-       data-en="Professional affiliations reflecting an ongoing commitment to AI filmmaking, digital arts, emerging technologies, and responsible creative innovation."
-       data-ar="عضويات مهنية تعكس التزاماً مستمراً بصناعة الأفلام بالذكاء الاصطناعي والفنون الرقمية والتقنيات الناشئة والابتكار الإبداعي المسؤول.">
-
-        Professional affiliations reflecting an ongoing commitment to AI filmmaking, digital arts, emerging technologies, and responsible creative innovation.
-
-    </p>
-
-
-
-    <div class="memberships-grid">
-
-
-        <!-- IAIC -->
-
-        <div class="membership-card">
-
-            <span class="membership-number">
-                01
-            </span>
-
-
-            <h3>
-                IAIC
-            </h3>
-
-
-            <span class="membership-type">
-                Loyalty Member
-            </span>
-
-
-            <p
-                data-en="International Artificial Intelligence Committee (IAIC). Listed as an AI Filmmaker & Director from Sudan."
-                data-ar="International Artificial Intelligence Committee (IAIC). مُدرج كصانع أفلام ومخرج بالذكاء الاصطناعي من السودان.">
-
-                International Artificial Intelligence Committee (IAIC). Listed as an AI Filmmaker & Director from Sudan.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- AICFG -->
-
-        <div class="membership-card">
-
-            <span class="membership-number">
-                02
-            </span>
-
-
-            <h3>
-                AICFG
-            </h3>
-
-
-            <span class="membership-type">
-                Member
-            </span>
-
-
-            <p
-                data-en="AI Cinematic Films Guild (AICFG), a professional community focused on AI filmmaking and cinematic innovation."
-                data-ar="AI Cinematic Films Guild (AICFG)، مجتمع مهني يركز على صناعة الأفلام بالذكاء الاصطناعي والابتكار السينمائي.">
-
-                AI Cinematic Films Guild (AICFG), a professional community focused on AI filmmaking and cinematic innovation.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- ADADA -->
-
-        <div class="membership-card">
-
-            <span class="membership-number">
-                03
-            </span>
-
-
-            <h3>
-                ADADA
-            </h3>
-
-
-            <span class="membership-type">
-                Member
-            </span>
-
-
-            <p
-                data-en="Asia Digital Art and Design Association (ADADA), connecting digital art, design, and emerging creative technologies."
-                data-ar="Asia Digital Art and Design Association (ADADA)، جمعية تربط بين الفن الرقمي والتصميم والتقنيات الإبداعية الناشئة.">
-
-                Asia Digital Art and Design Association (ADADA), connecting digital art, design, and emerging creative technologies.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CREDITS
-========================================================= -->
-
-<section class="section credits"
-         id="credits">
-
-    <div class="section-label">
-        08 / CREDITS
-    </div>
-
-
-    <div class="credit-list">
-
-
-        <div>
-            <span>Film</span>
-            <strong>THE MIRAM</strong>
-        </div>
-
-
-        <div>
-            <span>Written &amp; Directed by</span>
-            <strong>Muawia Ismail Ibrahim</strong>
-        </div>
-
-
-        <div>
-            <span>Format</span>
-            <strong>3D Animated Short Film</strong>
-        </div>
-
-
-        <div>
-            <span>Runtime</span>
-            <strong>7 Minutes 15 Seconds</strong>
-        </div>
-
-
-        <div>
-            <span>Language</span>
-            <strong>English</strong>
-        </div>
-
-
-        <div>
-            <span>Country</span>
-            <strong>Sudan</strong>
-        </div>
-
-
-        <div>
-            <span>Year</span>
-            <strong>2026</strong>
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PRESS
-========================================================= -->
-
-<section class="section press">
-
-    <div class="press-card">
-
-
-        <div>
-
-            <p class="kicker">
-                PRESS &amp; FESTIVALS
-            </p>
-
-
-            <h2>
-
-                Take the story
-                <br>
-
-                <em>with you.</em>
-
-            </h2>
-
-        </div>
-
-
-
-        <div class="press-links">
-
-
-            <a href="assets/THE_MIRAM_Press_Kit.pdf"
-               target="_blank">
-
-                PRESS KIT
-
-                <span>↗</span>
-
-            </a>
-
-
-            <a href="assets/THE_MIRAM_Director_Statement.pdf"
-               target="_blank">
-
-                DIRECTOR'S STATEMENT
-
-                <span>↗</span>
-
-            </a>
-
-
-            <a href="assets/THE_MIRAM_Credits.pdf"
-               target="_blank">
-
-                FULL CREDITS
-
-                <span>↗</span>
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section class="section contact"
-         id="contact">
-
-
-    <div>
-
-        <p class="kicker">
-            CONTACT
-        </p>
-
-
-        <h2
-            data-en="Stories can cross<br><em>every border.</em>"
-            data-ar="القصص تستطيع عبور<br><em>كل الحدود.</em>">
-
-            Stories can cross
-            <br>
-            <em>every border.</em>
-
-        </h2>
-
-
-        <a class="email"
-           href="mailto:mawya1214@gmail.com">
-
-            mawya1214@gmail.com
-
-        </a>
-
-
-    </div>
-
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-
-    <div>
-
-        © 2026 MUAWIA ISMAIL IBRAHIM · THE MIRAM
-
-    </div>
-
-
-    <div>
-
-        <a href="privacy.html"
-           data-en="Privacy Policy"
-           data-ar="سياسة الخصوصية">
-
-            Privacy Policy
-
-        </a>
-
-    </div>
-
-
-</footer>
-
-
-
-<!-- MAIN JAVASCRIPT -->
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 
 </body>
-
 </html>
