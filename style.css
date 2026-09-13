@@ -89,6 +89,7 @@ h3,
 p,
 span,
 strong,
+small,
 a {
     max-width: 100%;
 }
@@ -125,7 +126,8 @@ p {
     visibility: hidden;
 }
 
-.loader-content {
+.loader-content,
+.loader-inner {
     text-align: center;
     width: 90%;
 }
@@ -156,7 +158,8 @@ p {
         loaderLine 1.5s infinite alternate;
 }
 
-.loader-sub {
+.loader-sub,
+.loader-subtitle {
     font-size: 0.65rem;
     letter-spacing: 0.25em;
     color: var(--sand);
@@ -307,7 +310,8 @@ nav a.active::after {
     width: 100%;
 }
 
-.header-actions {
+.header-actions,
+.actions {
     display: flex;
 
     align-items: center;
@@ -317,7 +321,8 @@ nav a.active::after {
     flex-shrink: 0;
 }
 
-.language-btn {
+.language-btn,
+#langBtn {
     border:
         1px solid rgba(214,168,79,0.4);
 
@@ -336,12 +341,14 @@ nav a.active::after {
     white-space: nowrap;
 }
 
-.language-btn:hover {
+.language-btn:hover,
+#langBtn:hover {
     background: var(--gold);
     color: var(--black);
 }
 
-.menu-btn {
+.menu-btn,
+#menuBtn.menu {
     display: none;
 
     border: 0;
@@ -580,7 +587,8 @@ nav a.active::after {
         rgba(214,168,79,0.3);
 }
 
-.btn-outline {
+.btn-outline,
+.btn-secondary {
     border:
         1px solid
         rgba(244,233,208,0.5);
@@ -591,7 +599,8 @@ nav a.active::after {
         rgba(0,0,0,0.12);
 }
 
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-secondary:hover {
     border-color: var(--gold);
 
     color: var(--gold);
@@ -625,7 +634,8 @@ nav a.active::after {
     overflow-wrap: break-word;
 }
 
-.scroll-indicator {
+.scroll-indicator,
+.hero-scroll {
     position: absolute;
 
     bottom: 30px;
@@ -762,12 +772,14 @@ nav a.active::after {
     min-width: 0;
 }
 
-.film-copy {
+.film-copy,
+.film-text {
     max-width: 750px;
     min-width: 0;
 }
 
-.film-copy p {
+.film-copy p,
+.film-text p {
     color: var(--muted);
 
     margin-bottom: 22px;
@@ -777,7 +789,8 @@ nav a.active::after {
     overflow-wrap: break-word;
 }
 
-.film-copy .lead {
+.film-copy .lead,
+.film-text .lead {
     font-family: Georgia, serif;
 
     font-size: 1.45rem;
@@ -798,9 +811,13 @@ nav a.active::after {
 .fact {
     display: flex;
 
+    flex-wrap: wrap;
+
     justify-content: space-between;
 
-    gap: 20px;
+    align-items: baseline;
+
+    gap: 8px 20px;
 
     padding: 18px 0;
 
@@ -810,8 +827,10 @@ nav a.active::after {
 }
 
 .fact span,
-.fact strong {
+.fact strong,
+.fact small {
     overflow-wrap: break-word;
+    min-width: 0;
 }
 
 .fact span {
@@ -828,8 +847,18 @@ nav a.active::after {
     color: var(--ivory);
 
     letter-spacing: 0.1em;
+}
+
+.fact small {
+    font-size: 0.62rem;
+
+    color: var(--sand);
+
+    letter-spacing: 0.14em;
 
     text-align: right;
+
+    flex: 1 1 auto;
 }
 
 
@@ -841,7 +870,8 @@ nav a.active::after {
     background: var(--deep-indigo);
 }
 
-.story-layout {
+.story-layout,
+.story-content {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
@@ -851,6 +881,24 @@ nav a.active::after {
     align-items: center;
 
     min-width: 0;
+}
+
+.story-intro,
+.story-body {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.story-location {
+    display: inline-block;
+
+    color: var(--gold);
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 15px;
 }
 
 .image-button {
@@ -912,7 +960,8 @@ nav a.active::after {
     font-size: 1.5rem;
 }
 
-.story-quote {
+.story-quote,
+.story-intro h3 {
     font-family: Georgia, serif;
 
     font-size:
@@ -927,10 +976,13 @@ nav a.active::after {
     overflow-wrap: break-word;
 }
 
-.story-text p {
+.story-text p,
+.story-body p {
     color: var(--muted);
 
     margin-bottom: 20px;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -952,7 +1004,8 @@ nav a.active::after {
     min-width: 0;
 }
 
-.gallery-main {
+.gallery-main,
+.gallery-large {
     grid-row: span 2;
 }
 
@@ -986,7 +1039,8 @@ nav a.active::after {
     transform: scale(1.05);
 }
 
-.gallery-overlay {
+.gallery-overlay,
+.gallery-caption {
     position: absolute;
 
     left: 0;
@@ -1002,9 +1056,12 @@ nav a.active::after {
         );
 
     text-align: left;
+
+    max-width: 100%;
 }
 
-.gallery-overlay span {
+.gallery-overlay span,
+.gallery-caption span {
     display: block;
 
     color: var(--gold);
@@ -1012,9 +1069,12 @@ nav a.active::after {
     font-size: 0.7rem;
 
     letter-spacing: 0.2em;
+
+    overflow-wrap: break-word;
 }
 
-.gallery-overlay strong {
+.gallery-overlay strong,
+.gallery-caption strong {
     display: block;
 
     margin-top: 7px;
@@ -1026,10 +1086,18 @@ nav a.active::after {
     overflow-wrap: break-word;
 }
 
-.visual-card {
+.visual-card,
+.gallery-placeholder {
     min-height: 240px;
 
     padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
 
     border:
         1px solid
@@ -1045,17 +1113,23 @@ nav a.active::after {
     transition: var(--transition);
 }
 
-.visual-card:hover {
+.visual-card:hover,
+.gallery-placeholder:hover {
     border-color:
         rgba(214,168,79,0.4);
 
     transform: translateY(-4px);
 }
 
-.visual-card > span {
+.visual-card > span,
+.gallery-placeholder > span {
     color: var(--gold);
 
-    font-size: 0.65rem;
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+
+    overflow-wrap: break-word;
 }
 
 .visual-card h3 {
@@ -1093,7 +1167,8 @@ nav a.active::after {
         var(--deep-indigo);
 }
 
-.director-layout {
+.director-layout,
+.director-grid {
     display: grid;
 
     grid-template-columns: 280px 1fr;
@@ -1105,7 +1180,8 @@ nav a.active::after {
     min-width: 0;
 }
 
-.director-mark {
+.director-mark,
+.director-photo {
     width: 240px;
     height: 240px;
 
@@ -1134,14 +1210,24 @@ nav a.active::after {
     box-shadow:
         0 0 70px
         rgba(214,168,79,0.08);
+
+    overflow: hidden;
 }
 
-.director-bio {
+.director-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.director-bio,
+.director-info {
     max-width: 760px;
     min-width: 0;
 }
 
-.director-bio h3 {
+.director-bio h3,
+.director-info h3 {
     font-family: Georgia, serif;
 
     font-size: 2rem;
@@ -1153,10 +1239,35 @@ nav a.active::after {
     overflow-wrap: break-word;
 }
 
-.director-bio p {
+.director-role {
+    color: var(--gold);
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.16em;
+
+    margin-bottom: 20px;
+
+    overflow-wrap: break-word;
+}
+
+.director-bio p,
+.director-info p {
     color: var(--muted);
 
     margin-bottom: 18px;
+
+    overflow-wrap: break-word;
+}
+
+.director-signature {
+    margin-top: 25px;
+
+    font-family: Georgia, serif;
+
+    letter-spacing: 0.1em;
+
+    color: var(--gold);
 
     overflow-wrap: break-word;
 }
@@ -1170,7 +1281,8 @@ nav a.active::after {
     background: var(--midnight);
 }
 
-.membership-intro {
+.membership-intro,
+.section-intro {
     max-width: 760px;
 
     color: var(--muted);
@@ -1274,12 +1386,26 @@ nav a.active::after {
     overflow-wrap: break-word;
 }
 
+.membership-card h4 {
+    color: var(--muted);
+
+    font-size: 0.85rem;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+
+    overflow-wrap: break-word;
+}
+
 .membership-status {
     color: var(--gold);
 
     font-size: 0.6rem;
 
     letter-spacing: 0.18em;
+
+    overflow-wrap: break-word;
 }
 
 .membership-card p {
@@ -1302,7 +1428,9 @@ nav a.active::after {
 .video-frame,
 .watch-video,
 .trailer-video,
-.full-film-video {
+.full-film-video,
+.video-block,
+.drive-video {
     position: relative;
 
     width: 100%;
@@ -1321,6 +1449,8 @@ nav a.active::after {
 .watch-video iframe,
 .trailer-video iframe,
 .full-film-video iframe,
+.video-block iframe,
+.drive-video iframe,
 #watch iframe {
     display: block;
 
@@ -1334,6 +1464,26 @@ nav a.active::after {
     margin: 0;
 
     aspect-ratio: 16 / 9;
+}
+
+.video-title {
+    color: var(--gold);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 15px;
+}
+
+.watch-note {
+    margin-top: 40px;
+
+    color: var(--muted);
+
+    text-align: center;
+
+    overflow-wrap: break-word;
 }
 
 iframe {
@@ -1833,13 +1983,15 @@ html[dir="rtl"] .hero-meta {
 
 /* Sections */
 
-html[dir="rtl"] .membership-intro {
+html[dir="rtl"] .membership-intro,
+html[dir="rtl"] .section-intro {
     margin-left: 0;
 
     margin-right: 110px;
 }
 
-html[dir="rtl"] .gallery-overlay {
+html[dir="rtl"] .gallery-overlay,
+html[dir="rtl"] .gallery-caption {
     text-align: right;
 }
 
@@ -1855,7 +2007,8 @@ html[dir="rtl"] .technology-note {
         var(--gold);
 }
 
-html[dir="rtl"] .fact strong {
+html[dir="rtl"] .fact strong,
+html[dir="rtl"] .fact small {
     text-align: left;
 }
 
@@ -1966,7 +2119,8 @@ html[dir="rtl"] .fact strong {
         overflow-wrap: break-word;
     }
 
-    .menu-btn {
+    .menu-btn,
+    #menuBtn.menu {
         display: block;
     }
 
@@ -2091,7 +2245,8 @@ html[dir="rtl"] .fact strong {
             0.06em;
     }
 
-    .scroll-indicator {
+    .scroll-indicator,
+    .hero-scroll {
         display: none;
     }
 
@@ -2131,17 +2286,21 @@ html[dir="rtl"] .fact strong {
 
     .film-grid,
     .story-layout,
-    .director-layout {
+    .story-content,
+    .director-layout,
+    .director-grid {
         grid-template-columns: 1fr;
 
         gap: 45px;
     }
 
-    .director-layout {
+    .director-layout,
+    .director-grid {
         align-items: center;
     }
 
-    .director-mark {
+    .director-mark,
+    .director-photo {
         width: 180px;
         height: 180px;
 
@@ -2150,7 +2309,8 @@ html[dir="rtl"] .fact strong {
         margin: auto;
     }
 
-    .membership-intro {
+    .membership-intro,
+    .section-intro {
         margin:
             -30px 0 50px;
     }
@@ -2159,7 +2319,8 @@ html[dir="rtl"] .fact strong {
         grid-template-columns: 1fr;
     }
 
-    .gallery-main {
+    .gallery-main,
+    .gallery-large {
         grid-row: auto;
     }
 
@@ -2196,7 +2357,8 @@ html[dir="rtl"] .fact strong {
         text-align: right;
     }
 
-    html[dir="rtl"] .fact strong {
+    html[dir="rtl"] .fact strong,
+    html[dir="rtl"] .fact small {
         text-align: left;
     }
 }
@@ -2213,11 +2375,13 @@ html[dir="rtl"] .fact strong {
             0 14px;
     }
 
-    .header-actions {
+    .header-actions,
+    .actions {
         gap: 7px;
     }
 
-    .language-btn {
+    .language-btn,
+    #langBtn {
         padding:
             7px 10px;
 
@@ -2273,7 +2437,8 @@ html[dir="rtl"] .fact strong {
         min-height: 300px;
     }
 
-    .visual-card {
+    .visual-card,
+    .gallery-placeholder {
         padding: 25px;
     }
 
@@ -2292,7 +2457,9 @@ html[dir="rtl"] .fact strong {
     .video-frame,
     .watch-video,
     .trailer-video,
-    .full-film-video {
+    .full-film-video,
+    .video-block,
+    .drive-video {
         width: 100%;
 
         aspect-ratio: 16 / 9;
@@ -2304,6 +2471,8 @@ html[dir="rtl"] .fact strong {
     .watch-video iframe,
     .trailer-video iframe,
     .full-film-video iframe,
+    .video-block iframe,
+    .drive-video iframe,
     #watch iframe {
         width: 100% !important;
 
@@ -2507,7 +2676,8 @@ body {
         overflow-wrap: break-word;
     }
 
-    .scroll-indicator {
+    .scroll-indicator,
+    .hero-scroll {
         display: none;
     }
 }
@@ -2744,7 +2914,9 @@ html[dir="rtl"] .section-label {
 .video-container,
 .full-film,
 .trailer,
-.watch-video {
+.watch-video,
+.video-block,
+.drive-video {
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -2754,7 +2926,9 @@ html[dir="rtl"] .section-label {
 .video-container iframe,
 .full-film iframe,
 .trailer iframe,
-.watch-video iframe {
+.watch-video iframe,
+.video-block iframe,
+.drive-video iframe {
     display: block;
 
     width: 100%;
@@ -2778,7 +2952,9 @@ html[dir="rtl"] .section-label {
     .video-container,
     .full-film,
     .trailer,
-    .watch-video {
+    .watch-video,
+    .video-block,
+    .drive-video {
         overflow: hidden;
     }
 }
@@ -2797,6 +2973,7 @@ html[dir="rtl"] .section-label {
     h4,
     span,
     strong,
+    small,
     a,
     button {
         max-width: 100%;
@@ -2807,8 +2984,11 @@ html[dir="rtl"] .section-label {
     }
 
     .film-copy,
+    .film-text,
     .story-text,
+    .story-body,
     .director-bio,
+    .director-info,
     .membership-card,
     .press-box,
     .technology-note,
@@ -2820,8 +3000,22 @@ html[dir="rtl"] .section-label {
     .membership-card h3,
     .press-box h3,
     .director-bio h3,
+    .director-info h3,
     .visual-card h3 {
         overflow-wrap: break-word;
+    }
+
+    .fact {
+        flex-wrap: wrap;
+    }
+
+    .fact small {
+        text-align: left;
+        flex-basis: 100%;
+    }
+
+    html[dir="rtl"] .fact small {
+        text-align: right;
     }
 }
 
@@ -2853,19 +3047,22 @@ html[dir="rtl"] .section-label {
         text-overflow: ellipsis;
     }
 
-    .header-actions {
+    .header-actions,
+    .actions {
         flex-shrink: 0;
 
         gap: 7px;
     }
 
-    .language-btn {
+    .language-btn,
+    #langBtn {
         padding: 7px 10px;
 
         white-space: nowrap;
     }
 
-    .menu-btn {
+    .menu-btn,
+    #menuBtn.menu {
         flex-shrink: 0;
     }
 
@@ -2880,7 +3077,8 @@ html[dir="rtl"] .site-header {
     direction: rtl;
 }
 
-html[dir="rtl"] .header-actions {
+html[dir="rtl"] .header-actions,
+html[dir="rtl"] .actions {
     direction: ltr;
 }
 
