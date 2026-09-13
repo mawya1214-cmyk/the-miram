@@ -1,2047 +1,1380 @@
-/* =========================================================
-   THE MIRAM
-   GLOBAL ANIMATION CINEMA
-   Premium Cinematic Visual Identity
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="THE MIRAM — The Light That No War Can Dim. A Sudanese AI-assisted 3D animated short film by Muawia Ismail Ibrahim.">
+
+<meta name="theme-color" content="#090909">
+
+<meta property="og:title"
+content="THE MIRAM | The Light That No War Can Dim">
+
+<meta property="og:description"
+content="A Sudanese AI-assisted 3D animated short film written and directed by Muawia Ismail Ibrahim.">
+
+<title>THE MIRAM | Official Film</title>
 
 
-/* =========================================================
-   COLOR SYSTEM
-   ========================================================= */
+<!-- GOOGLE FONTS -->
 
-:root {
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    --midnight: #07111f;
-    --midnight-2: #09182b;
-    --navy: #0d1d32;
-    --indigo: #132642;
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-    --gold: #d6a84f;
-    --gold-light: #f0c56b;
-    --amber: #f0b35a;
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
-    --ivory: #f4e9d0;
-    --ivory-soft: #ded4bf;
 
-    --sand: #b9a889;
-    --muted: #8e8b84;
+<!-- MAIN CSS -->
 
-    --white: #ffffff;
+<link rel="stylesheet" href="style.css">
 
-    --line: rgba(244, 233, 208, 0.14);
-    --line-light: rgba(244, 233, 208, 0.08);
 
-    --glass: rgba(13, 29, 50, 0.72);
-
-    --shadow:
-        0 30px 80px rgba(0,0,0,0.45);
-
-    --glow:
-        0 0 40px rgba(214,168,79,0.12);
-
-}
-
+<style>
 
 /* =========================================================
-   RESET
-   ========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-
-    background:
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(35, 69, 110, 0.32),
-            transparent 42%
-        ),
-        var(--midnight);
-
-    color: var(--ivory);
-
-    font-family: "Inter", sans-serif;
-
-    line-height: 1.6;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   SELECTION
-   ========================================================= */
-
-::selection {
-
-    background: var(--gold);
-
-    color: var(--midnight);
-
-}
-
-
-/* =========================================================
-   LINKS
-   ========================================================= */
-
-a {
-
-    color: inherit;
-
-    text-decoration: none;
-
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.site-header {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    height: 82px;
-
-    z-index: 1000;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 0 5vw;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(7,17,31,0.94),
-            rgba(7,17,31,0.60)
-        );
-
-    backdrop-filter: blur(18px);
-
-    border-bottom:
-        1px solid rgba(244,233,208,0.08);
-
-}
-
-
-/* BRAND */
-
-.brand {
-
-    font-family: "Cinzel", serif;
-
-    font-size: 20px;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
-    color: var(--ivory);
-
-}
-
-.brand span {
-
-    color: var(--gold-light);
-
-}
-
-
-/* NAVIGATION */
-
-.site-header nav {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 24px;
-
-}
-
-.site-header nav a {
-
-    position: relative;
-
-    color: var(--ivory-soft);
-
-    font-size: 10px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-    transition:
-        color 0.3s ease;
-
-}
-
-.site-header nav a::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    bottom: -8px;
-
-    width: 0;
-
-    height: 1px;
-
-    background: var(--gold);
-
-    transition: width 0.3s ease;
-
-}
-
-.site-header nav a:hover {
-
-    color: var(--gold-light);
-
-}
-
-.site-header nav a:hover::after {
-
-    width: 100%;
-
-}
-
-
-/* HEADER ACTIONS */
-
-.actions {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-}
-
-#langBtn {
-
-    border: 1px solid var(--line);
-
-    background: rgba(255,255,255,0.03);
-
-    color: var(--ivory);
-
-    padding: 8px 13px;
-
-    font-family: "Noto Kufi Arabic", sans-serif;
-
-    font-size: 11px;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-
-}
-
-#langBtn:hover {
-
-    border-color: var(--gold);
-
-    color: var(--gold-light);
-
-    background: rgba(214,168,79,0.08);
-
-}
-
-.menu {
-
-    display: none;
-
-    border: 0;
-
-    background: transparent;
-
-    color: var(--ivory);
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-
-    min-height: 100vh;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    background: var(--midnight);
-
-}
-
-
-/* CINEMATIC BACKGROUND */
-
-.hero-bg {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        radial-gradient(
-            circle at 70% 45%,
-            rgba(214,168,79,0.13),
-            transparent 26%
-        ),
-
-        radial-gradient(
-            circle at 30% 65%,
-            rgba(43,91,137,0.18),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            125deg,
-            #050d18 0%,
-            #071525 48%,
-            #101e34 100%
-        );
-
-    transform: scale(1.03);
-
-}
-
-
-/* FILM GRAIN */
-
-.hero-bg::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    opacity: 0.055;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-
-    pointer-events: none;
-
-}
-
-
-/* VIGNETTE */
-
-.hero-vignette {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(3,9,17,0.88),
-            rgba(3,9,17,0.25),
-            rgba(3,9,17,0.72)
-        ),
-
-        linear-gradient(
-            0deg,
-            rgba(3,9,17,0.90),
-            transparent 45%,
-            rgba(3,9,17,0.25)
-        );
-
-}
-
-
-/* HERO CONTENT */
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding-top: 70px;
-
-}
-
-.eyebrow {
-
-    color: var(--gold-light);
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 25px;
-
-}
-
-.hero h1 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(70px, 12vw, 170px);
-
-    line-height: 0.82;
-
-    letter-spacing: -4px;
-
-    font-weight: 600;
-
-    color: var(--ivory);
-
-    text-shadow:
-        0 15px 60px rgba(0,0,0,0.5);
-
-}
-
-.hero h1 span {
-
-    color: var(--gold-light);
-
-    text-shadow:
-        0 0 50px rgba(214,168,79,0.18);
-
-}
-
-.tagline {
-
-    margin-top: 35px;
-
-    color: var(--ivory-soft);
-
-    font-size: 14px;
-
-    letter-spacing: 5px;
-
-    font-weight: 500;
-
-}
-
-
-/* META */
-
-.meta {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-top: 28px;
-
-    color: var(--sand);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-}
-
-.meta b {
-
-    width: 3px;
-
-    height: 3px;
-
-    background: var(--gold);
-
-    border-radius: 50%;
-
-}
-
-
-/* HERO BUTTONS */
-
-.hero-cta {
-
-    display: flex;
-
-    gap: 15px;
-
-    margin-top: 42px;
-
-}
-
-
-/* =========================================================
-   BUTTON SYSTEM
-   ========================================================= */
-
-.btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 48px;
-
-    padding: 0 27px;
-
-    border: 1px solid var(--gold);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease;
-
-}
-
-.btn.primary {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--gold-light),
-            var(--gold)
-        );
-
-    color: #07111f;
-
-    border-color: var(--gold-light);
-
-    font-weight: 700;
-
-    box-shadow:
-        0 10px 35px rgba(214,168,79,0.12);
-
-}
-
-.btn.primary:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 45px rgba(214,168,79,0.25);
-
-}
-
-.btn.ghost {
-
-    background:
-        rgba(255,255,255,0.025);
-
-    color: var(--ivory);
-
-    border-color:
-        rgba(244,233,208,0.28);
-
-}
-
-.btn.ghost:hover {
-
-    background:
-        rgba(214,168,79,0.08);
-
-    border-color: var(--gold);
-
-    color: var(--gold-light);
-
-    transform: translateY(-3px);
-
-}
-
-
-/* HERO CREDIT */
-
-.hero-credit {
-
-    position: absolute;
-
-    right: 5vw;
-
-    bottom: 55px;
-
-    z-index: 2;
-
-    text-align: right;
-
-    color: var(--sand);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    line-height: 1.9;
-
-}
-
-.hero-credit strong {
-
-    color: var(--ivory);
-
-    font-size: 11px;
-
-}
-
-
-/* SCROLL */
-
-.scroll {
-
-    position: absolute;
-
-    left: 5vw;
-
-    bottom: 50px;
-
-    z-index: 2;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    color: var(--sand);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-}
-
-.scroll span {
-
-    width: 45px;
-
-    height: 1px;
-
-    background: var(--gold);
-
-}
-
-
-/* =========================================================
-   GLOBAL SECTIONS
-   ========================================================= */
-
-.section {
-
-    position: relative;
-
-    padding: 130px 7vw;
-
-    background:
-        linear-gradient(
-            180deg,
-            var(--midnight),
-            var(--midnight-2)
-        );
-
-    border-top:
-        1px solid var(--line-light);
-
-}
-
-
-/* ALTERNATING SECTIONS */
-
-.section:nth-of-type(even) {
-
-    background:
-        linear-gradient(
-            180deg,
-            #091728,
-            #0b1a2d
-        );
-
-}
-
-
-/* SECTION LABEL */
-
-.section-label {
-
-    color: var(--gold);
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 35px;
-
-}
-
-
-/* TITLES */
-
-.kicker {
-
-    color: var(--gold-light);
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 18px;
-
-}
-
-.section-title h2,
-.center-head h2 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(35px, 5vw, 67px);
-
-    line-height: 1.05;
-
-    font-weight: 500;
-
-    color: var(--ivory);
-
-}
-
-.section-title h2 em,
-.center-head h2 em {
-
-    color: var(--gold-light);
-
-    font-style: normal;
-
-}
-
-
-/* =========================================================
-   FILM SECTION
-   ========================================================= */
-
-.film-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(280px, 0.9fr)
-        minmax(300px, 1.1fr);
-
-    gap: 8vw;
-
-    align-items: center;
-
-    margin-top: 70px;
-
-}
-
-
-/* POSTER */
-
-.poster {
-
-    position: relative;
-
-    overflow: hidden;
-
-    background: #050c15;
-
-    border:
-        1px solid rgba(244,233,208,0.12);
-
-    box-shadow:
-        0 35px 80px rgba(0,0,0,0.42);
-
-}
-
-.poster img {
-
-    width: 100%;
-
-    display: block;
-
-    transition:
-        transform 0.7s ease;
-
-}
-
-.poster:hover img {
-
-    transform: scale(1.025);
-
-}
-
-.img-fallback {
-
-    position: absolute;
-
-    inset: 0;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-direction: column;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--navy),
-            var(--indigo)
-        );
-
-    color: var(--gold-light);
-
-    font-family: "Cinzel", serif;
-
-    text-align: center;
-
-}
-
-.poster-caption {
-
-    display: block;
-
-    margin-top: 15px;
-
-    color: var(--sand);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* FILM COPY */
-
-.film-copy {
-
-    max-width: 650px;
-
-}
-
-.lead {
-
-    color: var(--ivory-soft);
-
-    font-size: 17px;
-
-    line-height: 1.9;
-
-}
-
-.rule {
-
-    width: 70px;
-
-    height: 1px;
-
-    background: var(--gold);
-
-    margin: 40px 0;
-
-}
-
-
-/* FACTS */
-
-.facts {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 15px;
-
-}
-
-.facts div {
-
-    border-left:
-        1px solid var(--gold);
-
-    padding-left: 14px;
-
-}
-
-.facts strong {
-
-    display: block;
-
-    color: var(--ivory);
-
-    font-family: "Cinzel", serif;
-
-    font-size: 21px;
-
-}
-
-.facts span {
-
-    color: var(--sand);
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* =========================================================
-   FULL FILM / VIDEO
-   ========================================================= */
+   FULL FILM
+========================================================= */
 
 .full-film {
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(214,168,79,0.07),
-            transparent 35%
-        ),
-        #06101d;
-
+    background: #090909;
 }
 
-.center-head {
-
-    text-align: center;
-
-    max-width: 900px;
-
-    margin: 0 auto;
-
-}
-
-.full-film .video-frame,
-.trailer .video-frame {
-
-    max-width: 1200px;
-
-    margin: 60px auto 20px;
-
-    aspect-ratio: 16 / 9;
-
-    background: #02060b;
-
-    border:
-        1px solid rgba(214,168,79,0.22);
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,0.55),
-        0 0 60px rgba(214,168,79,0.06);
-
-    overflow: hidden;
-
-}
-
-.video-frame iframe {
-
+.full-film .video-frame {
     width: 100%;
+    max-width: 1200px;
+    margin: 50px auto 20px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
 
+.full-film .video-frame iframe {
+    width: 100%;
     height: 100%;
-
     border: 0;
-
+    display: block;
 }
 
 .video-note {
-
     text-align: center;
-
-    color: var(--sand);
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* =========================================================
-   STORY
-   ========================================================= */
-
-.story-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 1px;
-
-    margin-top: 70px;
-
-    background: var(--line);
-
-}
-
-.story-grid article {
-
-    min-height: 280px;
-
-    padding: 35px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(18,38,66,0.95),
-            rgba(7,17,31,0.98)
-        );
-
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease;
-
-}
-
-.story-grid article:hover {
-
-    transform: translateY(-5px);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(30,58,92,0.95),
-            rgba(9,22,39,0.98)
-        );
-
-}
-
-.story-grid article span {
-
-    color: var(--gold);
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-}
-
-.story-grid h3 {
-
-    margin-top: 35px;
-
-    color: var(--ivory);
-
-    font-family: "Cinzel", serif;
-
-    font-size: 18px;
-
-}
-
-.story-grid p {
-
+    opacity: 0.65;
     margin-top: 18px;
-
-    color: var(--sand);
-
-    font-size: 13px;
-
-    line-height: 1.8;
-
 }
 
 
 /* =========================================================
-   GALLERY
-   ========================================================= */
+   WATCH BUTTON
+========================================================= */
 
-.gallery-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 18px;
-
-    margin-top: 70px;
-
+.film-watch {
+    margin-top: 35px;
 }
 
-.gallery-grid figure {
-
-    position: relative;
-
-    overflow: hidden;
-
-    background: #050d18;
-
-    border:
-        1px solid rgba(244,233,208,0.08);
-
-}
-
-.gallery-grid img {
-
-    width: 100%;
-
-    display: block;
-
-    aspect-ratio: 16 / 10;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.6s ease,
-        filter 0.6s ease;
-
-}
-
-.gallery-grid figure:hover img {
-
-    transform: scale(1.045);
-
-    filter:
-        brightness(1.08)
-        saturate(1.05);
-
-}
-
-.gallery-grid figcaption {
-
-    position: absolute;
-
-    left: 15px;
-
-    bottom: 15px;
-
-    padding: 6px 10px;
-
-    background:
-        rgba(7,17,31,0.78);
-
-    backdrop-filter: blur(8px);
-
-    color: var(--ivory);
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    border-left:
-        2px solid var(--gold);
-
-}
-
-
-/* =========================================================
-   DIRECTOR
-   ========================================================= */
-
-.director {
-
-    background:
-        linear-gradient(
-            115deg,
-            #07111f,
-            #10233d
-        );
-
-}
-
-.director-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(280px,0.75fr)
-        minmax(320px,1.25fr);
-
-    gap: 8vw;
-
+.film-watch .btn {
+    display: inline-flex;
     align-items: center;
-
-}
-
-.director-photo {
-
-    position: relative;
-
-    overflow: hidden;
-
-    border:
-        1px solid rgba(214,168,79,0.18);
-
-    box-shadow:
-        0 30px 70px rgba(0,0,0,0.4);
-
-}
-
-.director-photo img {
-
-    width: 100%;
-
-    display: block;
-
-}
-
-.director-copy h2 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(40px, 5vw, 70px);
-
-    line-height: 0.98;
-
-    font-weight: 500;
-
-    margin-bottom: 35px;
-
-}
-
-.director-copy h2 em {
-
-    color: var(--gold-light);
-
-    font-style: normal;
-
-}
-
-.director-copy p {
-
-    color: var(--ivory-soft);
-
-    line-height: 1.9;
-
-    font-size: 14px;
-
-    margin-bottom: 20px;
-
-}
-
-.director-tag {
-
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 9px 15px;
-
-    border:
-        1px solid rgba(214,168,79,0.35);
-
-    color: var(--gold-light);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-}
-
-.director-tag span {
-
-    color: var(--sand);
-
-    margin: 0 7px;
-
+    justify-content: center;
 }
 
 
 /* =========================================================
-   MEMBERSHIPS
-   ========================================================= */
+   PROFESSIONAL MEMBERSHIPS
+========================================================= */
 
 .memberships {
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(77,127,168,0.10),
-            transparent 35%
-        ),
-        #081526;
-
+    background: #0b0b0b;
 }
 
 .memberships-intro {
-
     max-width: 760px;
-
-    margin: 35px auto 60px;
-
+    margin: 0 auto 55px;
     text-align: center;
-
-    color: var(--sand);
-
-    line-height: 1.9;
-
+    opacity: 0.75;
+    line-height: 1.8;
 }
 
 .memberships-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     max-width: 1200px;
-
-    margin: auto;
-
+    margin: 0 auto;
 }
 
 .membership-card {
-
-    position: relative;
-
-    padding: 38px 32px;
-
-    min-height: 300px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(22,44,73,0.82),
-            rgba(7,17,31,0.88)
-        );
-
-    border:
-        1px solid rgba(244,233,208,0.10);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.18);
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
-
-}
-
-.membership-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 45px;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--gold-light),
-            transparent
-        );
-
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 38px 30px;
+    background: rgba(255,255,255,0.025);
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
 }
 
 .membership-card:hover {
-
-    transform: translateY(-7px);
-
-    border-color:
-        rgba(214,168,79,0.35);
-
-    box-shadow:
-        0 25px 65px rgba(0,0,0,0.35),
-        0 0 35px rgba(214,168,79,0.05);
-
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.045);
 }
 
 .membership-number {
-
-    color: var(--gold);
-
-    font-size: 9px;
-
+    display: block;
+    font-size: 12px;
     letter-spacing: 3px;
-
+    opacity: 0.45;
+    margin-bottom: 25px;
 }
 
 .membership-card h3 {
-
-    margin-top: 25px;
-
     font-family: "Cinzel", serif;
-
-    font-size: 28px;
-
-    color: var(--ivory);
-
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
-.membership-type {
-
+.membership-card .membership-type {
     display: block;
-
-    margin-top: 6px;
-
-    color: var(--gold-light);
-
-    font-size: 9px;
-
+    font-size: 12px;
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
+    opacity: 0.55;
+    margin-bottom: 22px;
 }
 
 .membership-card p {
-
-    margin-top: 25px;
-
-    color: var(--sand);
-
-    font-size: 13px;
-
     line-height: 1.8;
-
-}
-
-
-/* =========================================================
-   CREDITS
-   ========================================================= */
-
-.credits {
-
-    background: #06101c;
-
-}
-
-.credit-list {
-
-    max-width: 900px;
-
-    margin: 60px auto 0;
-
-}
-
-.credit-list > div {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 30px;
-
-    padding: 23px 0;
-
-    border-bottom:
-        1px solid var(--line);
-
-}
-
-.credit-list span {
-
-    color: var(--sand);
-
-    font-size: 10px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-}
-
-.credit-list strong {
-
-    color: var(--ivory);
-
+    opacity: 0.75;
     font-size: 14px;
-
-    text-align: right;
-
 }
 
 
 /* =========================================================
-   PRESS
-   ========================================================= */
-
-.press {
-
-    background:
-        linear-gradient(
-            135deg,
-            #0d2037,
-            #081526
-        );
-
-}
-
-.press-card {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 60px;
-
-    padding: 65px;
-
-    border:
-        1px solid rgba(214,168,79,0.18);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(214,168,79,0.05),
-            rgba(77,127,168,0.04)
-        );
-
-}
-
-.press-card h2 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(35px,5vw,60px);
-
-    line-height: 1;
-
-}
-
-.press-card h2 em {
-
-    color: var(--gold-light);
-
-    font-style: normal;
-
-}
-
-.press-links {
-
-    display: flex;
-
-    flex-direction: column;
-
-    min-width: 280px;
-
-}
-
-.press-links a {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    padding: 16px 0;
-
-    border-bottom:
-        1px solid var(--line);
-
-    color: var(--ivory);
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    transition:
-        color 0.3s ease,
-        padding 0.3s ease;
-
-}
-
-.press-links a:hover {
-
-    color: var(--gold-light);
-
-    padding-left: 7px;
-
-}
-
-.press-links span {
-
-    color: var(--gold);
-
-}
-
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-.contact {
-
-    min-height: 65vh;
-
-    display: flex;
-
-    align-items: center;
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(214,168,79,0.08),
-            transparent 40%
-        ),
-        #06101c;
-
-}
-
-.contact h2 {
-
-    font-family: "Cinzel", serif;
-
-    font-size: clamp(45px, 7vw, 90px);
-
-    line-height: 0.98;
-
-}
-
-.contact h2 em {
-
-    color: var(--gold-light);
-
-    font-style: normal;
-
-}
-
-.email {
-
-    display: inline-block;
-
-    margin-top: 40px;
-
-    color: var(--gold-light);
-
-    border-bottom:
-        1px solid rgba(214,168,79,0.45);
-
-    padding-bottom: 8px;
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 20px;
-
-    padding: 30px 7vw;
-
-    background: #040b13;
-
-    border-top:
-        1px solid var(--line);
-
-    color: var(--muted);
-
-    font-size: 8px;
-
-    letter-spacing: 1.5px;
-
-}
-
-footer a {
-
-    color: var(--sand);
-
-}
-
-footer a:hover {
-
-    color: var(--gold-light);
-
-}
-
-
-/* =========================================================
-   ARABIC MODE
-   ========================================================= */
-
-html[dir="rtl"] body {
-
-    font-family: "Noto Kufi Arabic", sans-serif;
-
-}
-
-html[dir="rtl"] .hero-credit {
-
-    right: auto;
-
-    left: 5vw;
-
-    text-align: left;
-
-}
-
-html[dir="rtl"] .scroll {
-
-    left: auto;
-
-    right: 5vw;
-
-}
-
-html[dir="rtl"] .director-tag span {
-
-    margin: 0 7px;
-
-}
-
-html[dir="rtl"] .credit-list strong {
-
-    text-align: left;
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .site-header nav {
-
-        gap: 14px;
-
-    }
-
-    .story-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-    .gallery-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 900px) {
 
-    .site-header {
-
-        height: 72px;
-
-    }
-
-    .site-header nav {
-
-        position: fixed;
-
-        top: 72px;
-
-        left: 0;
-
-        width: 100%;
-
-        display: none;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 0;
-
-        padding: 20px 7vw;
-
-        background:
-            rgba(5,14,25,0.98);
-
-        border-bottom:
-            1px solid var(--line);
-
-    }
-
-    .site-header nav.active {
-
-        display: flex;
-
-    }
-
-    .site-header nav a {
-
-        width: 100%;
-
-        padding: 14px 0;
-
-    }
-
-    .menu {
-
-        display: block;
-
-    }
-
-    .film-grid,
-    .director-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
     .memberships-grid {
-
         grid-template-columns: 1fr;
-
-    }
-
-    .press-card {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
     }
 
 }
 
+@media (max-width: 600px) {
 
-@media (max-width: 650px) {
-
-    .section {
-
-        padding: 90px 6vw;
-
+    .full-film .video-frame {
+        margin-top: 30px;
     }
 
-    .hero-content {
-
-        width: 88%;
-
-    }
-
-    .hero h1 {
-
-        font-size: 70px;
-
-        letter-spacing: -2px;
-
-    }
-
-    .tagline {
-
-        font-size: 10px;
-
-        letter-spacing: 3px;
-
-    }
-
-    .hero-cta {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-    }
-
-    .hero-credit {
-
-        display: none;
-
-    }
-
-    .scroll {
-
-        bottom: 25px;
-
-    }
-
-    .facts {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap: 25px;
-
-    }
-
-    .story-grid,
-    .gallery-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .story-grid article {
-
-        min-height: auto;
-
-    }
-
-    .press-card {
-
-        padding: 35px 25px;
-
-    }
-
-    .press-links {
-
-        width: 100%;
-
-        min-width: 0;
-
-    }
-
-    .credit-list > div {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 8px;
-
-    }
-
-    .credit-list strong {
-
-        text-align: left;
-
-    }
-
-    footer {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
+    .membership-card {
+        padding: 30px 22px;
     }
 
 }
 
+</style>
 
-/* =========================================================
-   SUBTLE CINEMATIC GLOW
-   ========================================================= */
-
-.full-film::before,
-.memberships::before,
-.contact::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 400px;
-
-    height: 400px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(214,168,79,0.07),
-            transparent 70%
-        );
-
-    top: -200px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    pointer-events: none;
-
-}
+</head>
 
 
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-button:focus-visible,
-a:focus-visible {
-
-    outline:
-        2px solid var(--gold-light);
-
-    outline-offset: 4px;
-
-}
+<body>
 
 
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-@media (prefers-reduced-motion: reduce) {
+<header class="site-header">
 
-    html {
-        scroll-behavior: auto;
-    }
+    <a class="brand" href="#home">
+        THE <span>MIRAM</span>
+    </a>
 
-    *,
-    *::before,
-    *::after {
 
-        animation: none !important;
+    <nav id="nav">
 
-        transition: none !important;
+        <a href="#film"
+           data-en="The Film"
+           data-ar="الفيلم">
+           The Film
+        </a>
 
-    }
+        <a href="#full-film"
+           data-en="Full Film"
+           data-ar="الفيلم الكامل">
+           Full Film
+        </a>
 
-}
+        <a href="#trailer"
+           data-en="Trailer"
+           data-ar="الإعلان">
+           Trailer
+        </a>
+
+        <a href="#story"
+           data-en="Story"
+           data-ar="القصة">
+           Story
+        </a>
+
+        <a href="#gallery"
+           data-en="Gallery"
+           data-ar="المعرض">
+           Gallery
+        </a>
+
+        <a href="#director"
+           data-en="Director"
+           data-ar="المخرج">
+           Director
+        </a>
+
+        <a href="#memberships"
+           data-en="Memberships"
+           data-ar="العضويات">
+           Memberships
+        </a>
+
+        <a href="#credits"
+           data-en="Credits"
+           data-ar="طاقم العمل">
+           Credits
+        </a>
+
+        <a href="#contact"
+           data-en="Contact"
+           data-ar="تواصل">
+           Contact
+        </a>
+
+    </nav>
+
+
+    <div class="actions">
+
+        <button id="langBtn">
+            العربية
+        </button>
+
+        <button id="menuBtn"
+                class="menu"
+                aria-label="Open menu">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-vignette"></div>
+
+
+    <div class="hero-content">
+
+        <div class="eyebrow"
+             data-en="A SUDANESE 3D ANIMATED SHORT FILM"
+             data-ar="فيلم سوداني قصير للرسوم المتحركة ثلاثية الأبعاد">
+
+            A SUDANESE 3D ANIMATED SHORT FILM
+
+        </div>
+
+
+        <h1>
+            THE<br>
+            <span>MIRAM</span>
+        </h1>
+
+
+        <p class="tagline"
+           data-en="THE LIGHT THAT NO WAR CAN DIM"
+           data-ar="النور الذي لا تستطيع أي حرب أن تطفئه">
+
+            THE LIGHT THAT NO WAR CAN DIM
+
+        </p>
+
+
+        <div class="meta">
+
+            <span>7:15</span>
+
+            <b></b>
+
+            <span>ENGLISH</span>
+
+            <b></b>
+
+            <span>4K</span>
+
+            <b></b>
+
+            <span>16:9</span>
+
+        </div>
+
+
+        <div class="hero-cta">
+
+            <a class="btn primary"
+               href="#full-film"
+               data-en="WATCH THE FILM"
+               data-ar="شاهد الفيلم">
+
+                WATCH THE FILM
+
+            </a>
+
+
+            <a class="btn ghost"
+               href="#film"
+               data-en="DISCOVER THE FILM"
+               data-ar="اكتشف الفيلم">
+
+                DISCOVER THE FILM
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-credit">
+
+        WRITTEN &amp; DIRECTED BY<br>
+
+        <strong>
+            MUAWIA ISMAIL IBRAHIM
+        </strong>
+
+    </div>
+
+
+    <div class="scroll">
+
+        01
+
+        <span></span>
+
+        EXPLORE
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     THE FILM
+========================================================= -->
+
+<section class="section film" id="film">
+
+    <div class="section-label">
+        01 / THE FILM
+    </div>
+
+
+    <div class="section-title">
+
+        <p class="kicker"
+           data-en="OFFICIAL FILM"
+           data-ar="الفيلم الرسمي">
+
+            OFFICIAL FILM
+
+        </p>
+
+
+        <h2
+            data-en="A story of courage,<br><em>education and hope.</em>"
+            data-ar="حكاية عن الشجاعة،<br><em>والتعليم والأمل.</em>">
+
+            A story of courage,
+            <br>
+            <em>education and hope.</em>
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="film-grid">
+
+
+        <div class="poster-wrap">
+
+            <div class="poster">
+
+                <img src="assets/poster.png"
+                     alt="THE MIRAM official poster">
+
+                <div class="img-fallback">
+
+                    THE MIRAM
+
+                    <br>
+
+                    <small>
+                        POSTER
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <span class="poster-caption">
+
+                THE MIRAM / OFFICIAL POSTER
+
+            </span>
+
+        </div>
+
+
+
+        <div class="film-copy">
+
+
+            <p class="lead"
+               data-en="THE MIRAM follows Hawa, a 19-year-old student from Darfur whose life is transformed by war. Forced onto a dangerous journey across the desert, she carries grief, memories and one thing the conflict cannot take from her: her dream of education."
+               data-ar="يتابع فيلم «ميرام» حواء، طالبة سودانية تبلغ من العمر 19 عاماً من دارفور، تتغير حياتها بسبب الحرب. تُجبر على رحلة شاقة عبر الصحراء، وتحمل معها الفقد والذكريات، وشيئاً واحداً لا تستطيع الحرب انتزاعه منها: حلمها بالتعليم.">
+
+                THE MIRAM follows Hawa, a 19-year-old student from Darfur whose life is transformed by war. Forced onto a dangerous journey across the desert, she carries grief, memories and one thing the conflict cannot take from her: her dream of education.
+
+            </p>
+
+
+            <div class="rule"></div>
+
+
+            <div class="facts">
+
+                <div>
+                    <strong>7:15</strong>
+                    <span>RUNTIME</span>
+                </div>
+
+                <div>
+                    <strong>2026</strong>
+                    <span>YEAR</span>
+                </div>
+
+                <div>
+                    <strong>4K</strong>
+                    <span>FORMAT</span>
+                </div>
+
+                <div>
+                    <strong>EN</strong>
+                    <span>LANGUAGE</span>
+                </div>
+
+            </div>
+
+
+            <!-- WATCH FULL FILM BUTTON -->
+
+            <div class="film-watch">
+
+                <a class="btn primary"
+                   href="#full-film"
+                   data-en="WATCH THE FULL FILM"
+                   data-ar="شاهد الفيلم كاملاً">
+
+                    WATCH THE FULL FILM
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FULL FILM
+========================================================= -->
+
+<section class="section full-film"
+         id="full-film">
+
+    <div class="section-label">
+        02 / FULL FILM
+    </div>
+
+
+    <div class="center-head">
+
+        <p class="kicker"
+           data-en="OFFICIAL FULL FILM"
+           data-ar="الفيلم الرسمي الكامل">
+
+            OFFICIAL FULL FILM
+
+        </p>
+
+
+        <h2
+            data-en="Watch THE MIRAM <em>in full.</em>"
+            data-ar="شاهد «ميرام» <em>كاملاً.</em>">
+
+            Watch THE MIRAM
+            <em>in full.</em>
+
+        </h2>
+
+    </div>
+
+
+    <!-- GOOGLE DRIVE VIDEO -->
+
+    <div class="video-frame">
+
+        <iframe
+            src="https://drive.google.com/file/d/1jY_2_wdXknXbRDLWls0eClI6RdH7rERY/preview"
+            title="THE MIRAM — Full Film"
+            allow="autoplay; encrypted-media; fullscreen"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <p class="video-note"
+       data-en="Official full film hosted on Google Drive."
+       data-ar="الفيلم الرسمي الكامل مستضاف عبر Google Drive.">
+
+        Official full film hosted on Google Drive.
+
+    </p>
+
+
+    <!-- DIRECT GOOGLE DRIVE LINK -->
+
+    <div class="film-watch"
+         style="text-align:center;">
+
+        <a class="btn ghost"
+           href="https://drive.google.com/file/d/1jY_2_wdXknXbRDLWls0eClI6RdH7rERY/view?usp=drivesdk"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-en="OPEN FILM ON GOOGLE DRIVE"
+           data-ar="فتح الفيلم على Google Drive">
+
+            OPEN FILM ON GOOGLE DRIVE
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TRAILER
+========================================================= -->
+
+<section class="section trailer"
+         id="trailer">
+
+    <div class="section-label">
+        03 / TRAILER
+    </div>
+
+
+    <div class="center-head">
+
+        <p class="kicker"
+           data-en="OFFICIAL TRAILER"
+           data-ar="الإعلان الرسمي">
+
+            OFFICIAL TRAILER
+
+        </p>
+
+
+        <h2
+            data-en="The light <em>remains.</em>"
+            data-ar="النور <em>يبقى.</em>">
+
+            The light
+            <em>remains.</em>
+
+        </h2>
+
+    </div>
+
+
+    <div class="video-frame">
+
+        <iframe
+            id="trailerFrame"
+            title="THE MIRAM official trailer"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <p class="video-note"
+       data-en="Official trailer hosted on Google Drive."
+       data-ar="الإعلان الرسمي مستضاف عبر Google Drive.">
+
+        Official trailer hosted on Google Drive.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     STORY
+========================================================= -->
+
+<section class="section story"
+         id="story">
+
+    <div class="section-label">
+        04 / STORY
+    </div>
+
+
+    <div class="section-title">
+
+        <p class="kicker"
+           data-en="THE STORY"
+           data-ar="القصة">
+
+            THE STORY
+
+        </p>
+
+
+        <h2
+            data-en="She lost almost everything.<br><em>She did not lose her dream.</em>"
+            data-ar="فقدت كل شيء تقريباً.<br><em>لكنها لم تفقد حلمها.</em>">
+
+            She lost almost everything.
+            <br>
+            <em>She did not lose her dream.</em>
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="story-grid">
+
+
+        <article>
+
+            <span>01</span>
+
+            <h3>
+                EL GENEINA
+            </h3>
+
+            <p
+                data-en="Hawa's peaceful life and her dream of becoming a doctor are shattered as conflict reaches her hometown."
+                data-ar="تتحطم حياة حواء الهادئة وحلمها بأن تصبح طبيبة عندما يصل الصراع إلى مدينتها.">
+
+                Hawa's peaceful life and her dream of becoming a doctor are shattered as conflict reaches her hometown.
+
+            </p>
+
+        </article>
+
+
+
+        <article>
+
+            <span>02</span>
+
+            <h3>
+                THE JOURNEY
+            </h3>
+
+            <p
+                data-en="Alone and exhausted, she crosses the Darfur desert carrying memories, books and a determination to survive."
+                data-ar="وحيدة ومرهقة، تعبر حواء صحراء دارفور حاملة ذكرياتها وكتبها وإصرارها على النجاة.">
+
+                Alone and exhausted, she crosses the Darfur desert carrying memories, books and a determination to survive.
+
+            </p>
+
+        </article>
+
+
+
+        <article>
+
+            <span>03</span>
+
+            <h3>
+                AL DABBAH
+            </h3>
+
+            <p
+                data-en="A new school becomes a doorway to a future she refuses to surrender."
+                data-ar="تصبح مدرسة جديدة بوابة إلى مستقبل ترفض حواء الاستسلام عنه.">
+
+                A new school becomes a doorway to a future she refuses to surrender.
+
+            </p>
+
+        </article>
+
+
+
+        <article>
+
+            <span>04</span>
+
+            <h3>
+                THE MIRAM
+            </h3>
+
+            <p
+                data-en="Her achievement becomes a quiet victory: education survives even when war tries to take everything away."
+                data-ar="يصبح نجاحها انتصاراً هادئاً: يبقى التعليم حياً حتى عندما تحاول الحرب انتزاع كل شيء.">
+
+                Her achievement becomes a quiet victory: education survives even when war tries to take everything away.
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALLERY
+========================================================= -->
+
+<section class="section gallery"
+         id="gallery">
+
+    <div class="section-label">
+        05 / GALLERY
+    </div>
+
+
+    <div class="section-title">
+
+        <p class="kicker"
+           data-en="PRODUCTION STILLS"
+           data-ar="صور من الفيلم">
+
+            PRODUCTION STILLS
+
+        </p>
+
+
+        <h2
+            data-en="A Sudanese story,<br><em>frame by frame.</em>"
+            data-ar="حكاية سودانية،<br><em>لقطة بعد لقطة.</em>">
+
+            A Sudanese story,
+            <br>
+            <em>frame by frame.</em>
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="gallery-grid">
+
+
+        <figure>
+
+            <img src="assets/still-01.png"
+                 alt="THE MIRAM still 01">
+
+            <figcaption>
+                01 / EL GENEINA
+            </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+            <img src="assets/still-02.png"
+                 alt="THE MIRAM still 02">
+
+            <figcaption>
+                02 / THE JOURNEY
+            </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+            <img src="assets/still-03.png"
+                 alt="THE MIRAM still 03">
+
+            <figcaption>
+                03 / AL DABBAH
+            </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+            <img src="assets/still-04.png"
+                 alt="THE MIRAM still 04">
+
+            <figcaption>
+                04 / THE NILE
+            </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+            <img src="assets/still-05.png"
+                 alt="THE MIRAM still 05">
+
+            <figcaption>
+                05 / REUNION
+            </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+            <img src="assets/still-06.png"
+                 alt="THE MIRAM still 06">
+
+            <figcaption>
+                06 / HOPE
+            </figcaption>
+
+        </figure>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DIRECTOR
+========================================================= -->
+
+<section class="section director"
+         id="director">
+
+    <div class="section-label">
+        06 / THE FILMMAKER
+    </div>
+
+
+    <div class="director-grid">
+
+
+        <div class="director-photo">
+
+            <img src="assets/director.png"
+                 alt="Muawia Ismail Ibrahim">
+
+            <div class="img-fallback">
+
+                MUAWIA
+
+                <br>
+
+                <small>
+                    ISMAIL IBRAHIM
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="director-copy">
+
+
+            <p class="kicker"
+               data-en="WRITER • PRODUCER • DIRECTOR"
+               data-ar="كاتب • منتج • مخرج">
+
+                WRITER • PRODUCER • DIRECTOR
+
+            </p>
+
+
+            <h2>
+
+                Muawia
+                <br>
+                <em>Ismail Ibrahim</em>
+
+            </h2>
+
+
+            <p
+                data-en="Muawia Ismail Ibrahim is a Sudanese filmmaker, writer, producer, and AI Prompt Engineering specialist with a strong interest in digital storytelling, emerging technologies, African heritage, and historical narratives."
+                data-ar="معاوية إسماعيل إبراهيم مخرج وكاتب ومنتج سوداني ومتخصص في هندسة برومبتات الذكاء الاصطناعي، وله اهتمام قوي بالسرد الرقمي والتقنيات الناشئة والتراث الأفريقي والسرديات التاريخية.">
+
+                Muawia Ismail Ibrahim is a Sudanese filmmaker, writer, producer, and AI Prompt Engineering specialist with a strong interest in digital storytelling, emerging technologies, African heritage, and historical narratives.
+
+            </p>
+
+
+            <p
+                data-en="His creative work explores the use of generative artificial intelligence as a filmmaking tool, integrating AI-assisted storytelling, visual development, character and environment design, cinematic production, and digital post-production."
+                data-ar="تستكشف أعماله الإبداعية استخدام الذكاء الاصطناعي التوليدي كأداة لصناعة الأفلام، من خلال دمج السرد بمساعدة الذكاء الاصطناعي والتطوير البصري وتصميم الشخصيات والبيئات والإنتاج السينمائي وما بعد الإنتاج الرقمي.">
+
+                His creative work explores the use of generative artificial intelligence as a filmmaking tool, integrating AI-assisted storytelling, visual development, character and environment design, cinematic production, and digital post-production.
+
+            </p>
+
+
+            <p
+                data-en="Muawia is a member of the International Artificial Intelligence Committee (IAIC), the AI Cinematic Films Guild (AICFG), and the Asia Digital Art and Design Association (ADADA). His professional interests focus on AI filmmaking, digital arts, emerging creative technologies, and expanding opportunities for African creators."
+                data-ar="معاوية عضو في International Artificial Intelligence Committee (IAIC)، وAI Cinematic Films Guild (AICFG)، وAsia Digital Art and Design Association (ADADA). وتركز اهتماماته المهنية على صناعة الأفلام بالذكاء الاصطناعي والفنون الرقمية والتقنيات الإبداعية الناشئة وتوسيع الفرص أمام المبدعين الأفارقة.">
+
+                Muawia is a member of the International Artificial Intelligence Committee (IAIC), the AI Cinematic Films Guild (AICFG), and the Asia Digital Art and Design Association (ADADA). His professional interests focus on AI filmmaking, digital arts, emerging creative technologies, and expanding opportunities for African creators.
+
+            </p>
+
+
+            <p
+                data-en="He is committed to developing innovative cinematic projects that connect cultural heritage and contemporary technology while maintaining a strong emphasis on storytelling, visual identity, and creative direction."
+                data-ar="وهو ملتزم بتطوير مشاريع سينمائية مبتكرة تصل بين التراث الثقافي والتكنولوجيا المعاصرة، مع الحفاظ على تركيز قوي على السرد والهوية البصرية والإخراج الإبداعي.">
+
+                He is committed to developing innovative cinematic projects that connect cultural heritage and contemporary technology while maintaining a strong emphasis on storytelling, visual identity, and creative direction.
+
+            </p>
+
+
+            <div class="director-tag">
+
+                SUDAN
+
+                <span>•</span>
+
+                INDEPENDENT FILMMAKER
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROFESSIONAL MEMBERSHIPS
+========================================================= -->
+
+<section class="section memberships"
+         id="memberships">
+
+    <div class="section-label">
+        07 / PROFESSIONAL MEMBERSHIPS
+    </div>
+
+
+    <div class="section-title">
+
+        <p class="kicker"
+           data-en="PROFESSIONAL AFFILIATIONS"
+           data-ar="العضويات المهنية">
+
+            PROFESSIONAL AFFILIATIONS
+
+        </p>
+
+
+        <h2
+            data-en="Connected to the global <em>creative and AI community.</em>"
+            data-ar="عضويات مهنية ضمن <em>مجتمعات الذكاء الاصطناعي والإبداع العالمية.</em>">
+
+            Connected to the global
+            <br>
+            <em>creative and AI community.</em>
+
+        </h2>
+
+    </div>
+
+
+    <p class="memberships-intro"
+       data-en="Professional affiliations reflecting an ongoing commitment to AI filmmaking, digital arts, emerging technologies, and responsible creative innovation."
+       data-ar="عضويات مهنية تعكس التزاماً مستمراً بصناعة الأفلام بالذكاء الاصطناعي والفنون الرقمية والتقنيات الناشئة والابتكار الإبداعي المسؤول.">
+
+        Professional affiliations reflecting an ongoing commitment to AI filmmaking, digital arts, emerging technologies, and responsible creative innovation.
+
+    </p>
+
+
+
+    <div class="memberships-grid">
+
+
+        <!-- IAIC -->
+
+        <div class="membership-card">
+
+            <span class="membership-number">
+                01
+            </span>
+
+
+            <h3>
+                IAIC
+            </h3>
+
+
+            <span class="membership-type">
+                Loyalty Member
+            </span>
+
+
+            <p
+                data-en="International Artificial Intelligence Committee (IAIC). Listed as an AI Filmmaker & Director from Sudan."
+                data-ar="International Artificial Intelligence Committee (IAIC). مُدرج كصانع أفلام ومخرج بالذكاء الاصطناعي من السودان.">
+
+                International Artificial Intelligence Committee (IAIC). Listed as an AI Filmmaker & Director from Sudan.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- AICFG -->
+
+        <div class="membership-card">
+
+            <span class="membership-number">
+                02
+            </span>
+
+
+            <h3>
+                AICFG
+            </h3>
+
+
+            <span class="membership-type">
+                Member
+            </span>
+
+
+            <p
+                data-en="AI Cinematic Films Guild (AICFG), a professional community focused on AI filmmaking and cinematic innovation."
+                data-ar="AI Cinematic Films Guild (AICFG)، مجتمع مهني يركز على صناعة الأفلام بالذكاء الاصطناعي والابتكار السينمائي.">
+
+                AI Cinematic Films Guild (AICFG), a professional community focused on AI filmmaking and cinematic innovation.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ADADA -->
+
+        <div class="membership-card">
+
+            <span class="membership-number">
+                03
+            </span>
+
+
+            <h3>
+                ADADA
+            </h3>
+
+
+            <span class="membership-type">
+                Member
+            </span>
+
+
+            <p
+                data-en="Asia Digital Art and Design Association (ADADA), connecting digital art, design, and emerging creative technologies."
+                data-ar="Asia Digital Art and Design Association (ADADA)، جمعية تربط بين الفن الرقمي والتصميم والتقنيات الإبداعية الناشئة.">
+
+                Asia Digital Art and Design Association (ADADA), connecting digital art, design, and emerging creative technologies.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CREDITS
+========================================================= -->
+
+<section class="section credits"
+         id="credits">
+
+    <div class="section-label">
+        08 / CREDITS
+    </div>
+
+
+    <div class="credit-list">
+
+
+        <div>
+            <span>Film</span>
+            <strong>THE MIRAM</strong>
+        </div>
+
+
+        <div>
+            <span>Written &amp; Directed by</span>
+            <strong>Muawia Ismail Ibrahim</strong>
+        </div>
+
+
+        <div>
+            <span>Format</span>
+            <strong>3D Animated Short Film</strong>
+        </div>
+
+
+        <div>
+            <span>Runtime</span>
+            <strong>7 Minutes 15 Seconds</strong>
+        </div>
+
+
+        <div>
+            <span>Language</span>
+            <strong>English</strong>
+        </div>
+
+
+        <div>
+            <span>Country</span>
+            <strong>Sudan</strong>
+        </div>
+
+
+        <div>
+            <span>Year</span>
+            <strong>2026</strong>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRESS
+========================================================= -->
+
+<section class="section press">
+
+    <div class="press-card">
+
+
+        <div>
+
+            <p class="kicker">
+                PRESS &amp; FESTIVALS
+            </p>
+
+
+            <h2>
+
+                Take the story
+                <br>
+
+                <em>with you.</em>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="press-links">
+
+
+            <a href="assets/THE_MIRAM_Press_Kit.pdf"
+               target="_blank">
+
+                PRESS KIT
+
+                <span>↗</span>
+
+            </a>
+
+
+            <a href="assets/THE_MIRAM_Director_Statement.pdf"
+               target="_blank">
+
+                DIRECTOR'S STATEMENT
+
+                <span>↗</span>
+
+            </a>
+
+
+            <a href="assets/THE_MIRAM_Credits.pdf"
+               target="_blank">
+
+                FULL CREDITS
+
+                <span>↗</span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section contact"
+         id="contact">
+
+
+    <div>
+
+        <p class="kicker">
+            CONTACT
+        </p>
+
+
+        <h2
+            data-en="Stories can cross<br><em>every border.</em>"
+            data-ar="القصص تستطيع عبور<br><em>كل الحدود.</em>">
+
+            Stories can cross
+            <br>
+            <em>every border.</em>
+
+        </h2>
+
+
+        <a class="email"
+           href="mailto:mawya1214@gmail.com">
+
+            mawya1214@gmail.com
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+
+    <div>
+
+        © 2026 MUAWIA ISMAIL IBRAHIM · THE MIRAM
+
+    </div>
+
+
+    <div>
+
+        <a href="privacy.html"
+           data-en="Privacy Policy"
+           data-ar="سياسة الخصوصية">
+
+            Privacy Policy
+
+        </a>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- MAIN JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
